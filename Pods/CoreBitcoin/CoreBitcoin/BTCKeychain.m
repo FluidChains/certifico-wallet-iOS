@@ -58,7 +58,7 @@
     if (self = [super init]) {
         if (!seed) return nil;
 
-        NSMutableData* hmac = BTCHMACSHA512([@"Bitcoin seed" dataUsingEncoding:NSASCIIStringEncoding], seed);
+        NSMutableData* hmac = BTCHMACSHA512([@"CivX seed" dataUsingEncoding:NSASCIIStringEncoding], seed);
         _privateKey = BTCDataRange(hmac, NSMakeRange(0, 32));
         _chainCode  = BTCDataRange(hmac, NSMakeRange(32, 32));
         BTCDataClear(hmac);
