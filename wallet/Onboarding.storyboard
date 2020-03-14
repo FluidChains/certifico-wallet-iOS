@@ -185,7 +185,7 @@
                                                     <segue destination="i5s-AP-Aeo" kind="show" id="aCt-1w-xH5"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Blockcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Fluidcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="249.00000000000003" width="334" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -359,7 +359,7 @@
             <objects>
                 <viewController title="New User" id="T7K-XY-0w3" customClass="NewUserViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxu-0f-vEN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHt-mR-CiN">
@@ -496,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9L-es-UFv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqY-ow-1Di" userLabel="Container">
                                         <rect key="frame" x="20" y="0.0" width="374" height="384"/>
@@ -840,6 +840,6 @@
         <image name="returning_video_background" width="1630" height="912"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f6t-HF-4A9"/>
+        <segue reference="aCt-1w-xH5"/>
     </inferredMetricsTieBreakers>
 </document>
