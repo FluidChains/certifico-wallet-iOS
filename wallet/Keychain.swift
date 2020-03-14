@@ -46,7 +46,7 @@ class Keychain {
         self.unusedKeyIndex = unusedKeyIndex
         self.mnemonic = mnemonic
         keychain = mnemonic.keychain
-        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/0'/0'/0")
+        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0")
     }
     
     func nextPublicAddress() -> String {
