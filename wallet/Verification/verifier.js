@@ -384,7 +384,7 @@ var Verifier = function(e) {
     var p = {
             blockCypherUrl: "https://staging.exos.to/sochain/",
             blockCypherTestUrl: "https://staging.exos.to/sochain/",
-            chainSoUrl: "https://staging.exos.to/sochain/",
+            chainSoUrl: "https://certs-test.exos.to/api/sochain/some-id",
             chainSoTestUrl: "https://staging.exos.to/sochain/",
             etherScanMainUrl: "https://api.etherscan.io/api?module=proxy",
             etherScanRopstenUrl: "https://api-ropsten.etherscan.io/api?module=proxy"
