@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		258183E62452B58C00C13632 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258183E52452B58C00C13632 /* ExternalAccessory.framework */; };
+		258183E82452BF5000C13632 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258183E72452BF4F00C13632 /* MapKit.framework */; };
 		4ED0B2DF3AD647A603154AA6 /* InformationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0BB2EA5F0AA019AF2C10A /* InformationLogger.swift */; };
 		6360BE865570CCDF5C814E4E /* libPods-certificatesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F8BC2D27986317037BFD9D /* libPods-certificatesTests.a */; };
 		830120351EF4483F008EC454 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830120341EF4483F008EC454 /* ArgumentParser.swift */; };
@@ -164,7 +166,9 @@
 		06EE858C3746A1D1413048DB /* Pods-certificatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certificatesUITests/Pods-certificatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		18ED839C370360E8561D2E36 /* Pods-certificates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certificates/Pods-certificates.debug.xcconfig"; sourceTree = "<group>"; };
 		1E8F8F788045077CB0389D73 /* libPods-certificates.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificates.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		25F8E846241CABCE00048E54 /* certificates.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = certificates.entitlements; sourceTree = "<group>"; };
+		258183E42452B58B00C13632 /* certificates.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = certificates.entitlements; sourceTree = "<group>"; };
+		258183E52452B58C00C13632 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		258183E72452BF4F00C13632 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3C15AEB86836CEA4E704911A /* Pods-certificatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-certificatesTests/Pods-certificatesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4088D4A52B1AC1D4960CD4ED /* libPods-certificatesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED0BB2EA5F0AA019AF2C10A /* InformationLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationLogger.swift; sourceTree = "<group>"; };
@@ -292,9 +296,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258183E62452B58C00C13632 /* ExternalAccessory.framework in Frameworks */,
 				A92E89662049A63D0035460B /* liblottie-ios.a in Frameworks */,
 				83FF5DE71ECBA4100063397C /* Blockcerts.framework in Frameworks */,
 				830AB9EF1DA6BC4B00185E19 /* CommonCrypto.framework in Frameworks */,
+				258183E82452BF5000C13632 /* MapKit.framework in Frameworks */,
 				83111B771DA414EB006B058D /* JSONLD.framework in Frameworks */,
 				ABC6BB21B68837562003AED2 /* libPods-certificates.a in Frameworks */,
 			);
@@ -353,7 +359,7 @@
 		83111B1B1DA4110C006B058D = {
 			isa = PBXGroup;
 			children = (
-				25F8E846241CABCE00048E54 /* certificates.entitlements */,
+				258183E42452B58B00C13632 /* certificates.entitlements */,
 				EEAF834D21470884008EC1FA /* Localizations.swift */,
 				836031C41E5E513A005B2D2E /* Settings.bundle */,
 				836031C11E5E5064005B2D2E /* Assets */,
@@ -559,6 +565,8 @@
 		A653FD3709C0B4FB37E36B2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				258183E72452BF4F00C13632 /* MapKit.framework */,
+				258183E52452B58C00C13632 /* ExternalAccessory.framework */,
 				A92E89672049A63D0035460B /* liblottie-ios.a */,
 				83FF5DE61ECBA4100063397C /* Blockcerts.framework */,
 				830AB9EE1DA6BC4B00185E19 /* CommonCrypto.framework */,
@@ -1149,7 +1157,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = certificates.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_TEAM = LXHSY6339C;
@@ -1157,6 +1166,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = wallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.blockcerts-fluid.certf-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1172,7 +1182,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = certificates.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 112;
 				DEVELOPMENT_TEAM = LXHSY6339C;
@@ -1180,6 +1191,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = wallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.blockcerts-fluid.certf-wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
