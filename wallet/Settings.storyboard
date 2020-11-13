@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         <!--Add Credential View Controller-->
         <scene sceneID="mLI-ud-q07">
             <objects>
-                <viewController storyboardIdentifier="addIssuer" id="zKg-vx-nna" customClass="AddCredentialViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addIssuer" id="zKg-vx-nna" customClass="AddCredentialViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyU-vr-CF9"/>
                         <viewControllerLayoutGuide type="bottom" id="DPZ-2r-UEq"/>
@@ -22,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmi-6p-YUh" customClass="LabelC5T2B" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="335" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmi-6p-YUh" customClass="LabelC5T2B" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="24" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,8 +29,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ChooseMethod"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRt-yX-u7H" customClass="SecondaryButton" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="81" width="335" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRt-yX-u7H" customClass="SecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="61" width="335" height="34"/>
                                 <state key="normal" title="Import from URL"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ImportFromURL"/>
@@ -41,8 +39,8 @@
                                     <action selector="importFromURL" destination="zKg-vx-nna" eventType="touchUpInside" id="DG6-Qf-SLt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-zt-Ulb" customClass="SecondaryButton" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="119" width="335" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-zt-Ulb" customClass="SecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="103" width="335" height="34"/>
                                 <state key="normal" title="Import from File"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ImportFromFile"/>
@@ -64,6 +62,7 @@
                             <constraint firstItem="Uvw-zt-Ulb" firstAttribute="leading" secondItem="GHF-L8-3LO" secondAttribute="leading" constant="20" id="eaq-hY-Q7g"/>
                             <constraint firstItem="Uvw-zt-Ulb" firstAttribute="top" secondItem="CRt-yX-u7H" secondAttribute="bottom" constant="8" id="rG2-M5-4LF"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kck-lw-rBn"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr0-i5-FSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,7 +72,7 @@
         <!--Add Credential URL View Controller-->
         <scene sceneID="wkW-G8-r8z">
             <objects>
-                <viewController storyboardIdentifier="addCredentialFromURL" id="QjL-oU-RBK" customClass="AddCredentialURLViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addCredentialFromURL" id="QjL-oU-RBK" customClass="AddCredentialURLViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sfp-Ax-nil"/>
                         <viewControllerLayoutGuide type="bottom" id="w7K-f6-YK8"/>
@@ -83,9 +82,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1y-BS-XQd" userLabel="Container">
-                                <rect key="frame" x="20" y="40" width="335" height="116.5"/>
+                                <rect key="frame" x="20" y="20" width="335" height="116.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy and paste the credential URL:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuG-pc-4Tk" customClass="LabelC5T2B" customModule="certificates" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copy and paste the credential URL:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuG-pc-4Tk" customClass="LabelC5T2B" customModule="FluidCERTS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -121,8 +120,8 @@
                                     <constraint firstItem="nen-0i-pkh" firstAttribute="leading" secondItem="c1y-BS-XQd" secondAttribute="leading" id="yoP-aB-6f8"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwB-R1-Lad" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="180.5" width="335" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwB-R1-Lad" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="160.5" width="335" height="30"/>
                                 <state key="normal" title="Import"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Import"/>
@@ -141,6 +140,7 @@
                             <constraint firstItem="bwB-R1-Lad" firstAttribute="leading" secondItem="Sjh-my-skp" secondAttribute="leading" constant="20" id="dvc-qY-EHq"/>
                             <constraint firstAttribute="trailing" secondItem="bwB-R1-Lad" secondAttribute="trailing" constant="20" id="reG-kJ-v9F"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="OxP-Sx-h15"/>
                     </view>
                     <connections>
                         <outlet property="submitButton" destination="bwB-R1-Lad" id="1A5-od-tfe"/>

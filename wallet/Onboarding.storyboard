@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKt-0J-INy">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKt-0J-INy">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,9 +16,9 @@
         <!--Navigation Controller-->
         <scene sceneID="JHV-Fb-ny0">
             <objects>
-                <navigationController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKt-0J-INy" customClass="NavigationController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKt-0J-INy" customClass="NavigationController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QbR-4T-K5s">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.060152135789999998" green="0.1407451928" blue="0.305898577" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -42,13 +40,13 @@
         <!--Landing Screen View Controller-->
         <scene sceneID="i6h-4D-YvS">
             <objects>
-                <viewController id="C6e-aU-jG4" customClass="LandingScreenViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C6e-aU-jG4" customClass="LandingScreenViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5m7-RT-iLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Mc-lvh" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="644" width="374" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Mc-lvh" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="612" width="374" height="34"/>
                                 <state key="normal" title="_New User"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="NewUser"/>
@@ -57,8 +55,8 @@
                                     <segue destination="T7K-XY-0w3" kind="show" id="M7C-el-hH1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="89" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-hu-YmP" customClass="HomeSecondaryButton" customModule="certificates" customModuleProvider="target">
-                                <rect key="frame" x="20" y="686" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="89" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-hu-YmP" customClass="HomeSecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="654" width="374" height="30"/>
                                 <state key="normal" title="_Current User"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CurrentUser"/>
@@ -68,13 +66,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blockcerts_logo" translatesAutoresizingMaskIntoConstraints="NO" id="rU6-4J-hvL">
-                                <rect key="frame" x="82" y="20" width="250" height="52"/>
+                                <rect key="frame" x="-43" y="0.0" width="500" height="104"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58a-hx-ELF">
-                                <rect key="frame" x="0.0" y="72" width="414" height="572"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="508"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-1p-Syt" userLabel="Play button">
-                                        <rect key="frame" x="147" y="226" width="120" height="120"/>
+                                        <rect key="frame" x="147" y="194" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="fsO-cp-LR3"/>
                                             <constraint firstAttribute="height" constant="120" id="kRU-Gt-UT1"/>
@@ -91,27 +89,45 @@
                                     <constraint firstItem="TEb-1p-Syt" firstAttribute="centerX" secondItem="58a-hx-ELF" secondAttribute="centerX" id="hx8-lK-Yqi"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-Rr-EKk" customClass="HomeSecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                <rect key="frame" x="159" y="696" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="iCloud restore">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="iCloudRestore"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.060152135789394379" green="0.14074519276618958" blue="0.30589857697486877" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qKJ-hu-YmP" secondAttribute="trailing" id="BFh-mC-Y9j"/>
+                            <constraint firstItem="vYA-Rr-EKk" firstAttribute="trailing" secondItem="qKJ-hu-YmP" secondAttribute="trailing" id="C77-c2-dzM"/>
                             <constraint firstItem="uWO-Mc-lvh" firstAttribute="top" secondItem="58a-hx-ELF" secondAttribute="bottom" id="DpN-z0-Y8n"/>
+                            <constraint firstItem="vYA-Rr-EKk" firstAttribute="leading" secondItem="qKJ-hu-YmP" secondAttribute="leading" id="ERt-DP-H5N"/>
+                            <constraint firstItem="an8-p7-2zd" firstAttribute="bottom" secondItem="vYA-Rr-EKk" secondAttribute="bottom" constant="10" id="GJI-42-jBt"/>
                             <constraint firstItem="qKJ-hu-YmP" firstAttribute="top" secondItem="uWO-Mc-lvh" secondAttribute="bottom" constant="8" id="Kuj-oZ-T7k"/>
-                            <constraint firstItem="an8-p7-2zd" firstAttribute="bottom" secondItem="qKJ-hu-YmP" secondAttribute="bottom" constant="20" id="Oyh-Ns-D2r"/>
                             <constraint firstItem="58a-hx-ELF" firstAttribute="width" secondItem="5m7-RT-iLO" secondAttribute="width" id="QnQ-g2-xcW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uWO-Mc-lvh" secondAttribute="trailing" id="RZU-MA-7gM"/>
                             <constraint firstItem="uWO-Mc-lvh" firstAttribute="leading" secondItem="5m7-RT-iLO" secondAttribute="leadingMargin" id="Yqg-aR-7nW"/>
                             <constraint firstItem="qKJ-hu-YmP" firstAttribute="leading" secondItem="5m7-RT-iLO" secondAttribute="leadingMargin" id="eKv-uB-s0z"/>
+                            <constraint firstItem="vYA-Rr-EKk" firstAttribute="top" secondItem="qKJ-hu-YmP" secondAttribute="bottom" constant="8" id="fi2-jw-5pV"/>
                             <constraint firstItem="58a-hx-ELF" firstAttribute="centerX" secondItem="an8-p7-2zd" secondAttribute="centerX" id="hNc-BH-uV8"/>
                             <constraint firstItem="rU6-4J-hvL" firstAttribute="centerX" secondItem="an8-p7-2zd" secondAttribute="centerX" id="huW-XS-Cbl"/>
                             <constraint firstItem="58a-hx-ELF" firstAttribute="top" secondItem="rU6-4J-hvL" secondAttribute="bottom" id="k7y-CF-1Wx"/>
                             <constraint firstItem="rU6-4J-hvL" firstAttribute="top" secondItem="an8-p7-2zd" secondAttribute="top" id="lqN-0Q-3Ao"/>
+                            <constraint firstItem="vYA-Rr-EKk" firstAttribute="leading" secondItem="an8-p7-2zd" secondAttribute="leading" constant="20" id="rSS-II-ffG"/>
+                            <constraint firstItem="an8-p7-2zd" firstAttribute="trailing" secondItem="vYA-Rr-EKk" secondAttribute="trailing" constant="20" id="sHP-YZ-yeH"/>
                             <constraint firstItem="qKJ-hu-YmP" firstAttribute="top" secondItem="uWO-Mc-lvh" secondAttribute="bottom" constant="8" id="vhZ-Ij-9SM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="an8-p7-2zd"/>
                     </view>
                     <navigationItem key="navigationItem" id="ima-vz-6aP"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="icloudRestore" destination="vYA-Rr-EKk" id="IoH-tO-hmd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3k-Hb-e4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,13 +136,13 @@
         <!--Welcome Returning Users View Controller-->
         <scene sceneID="a3e-su-2Kq">
             <objects>
-                <viewController storyboardIdentifier="WelcomeReturningUsers" id="g39-vY-4w6" customClass="WelcomeReturningUsersViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeReturningUsers" id="g39-vY-4w6" customClass="WelcomeReturningUsersViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="viy-wW-g0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CO2-bx-nC6">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-ki-NCg" userLabel="Container">
                                         <rect key="frame" x="20" y="0.0" width="374" height="553.66666666666663"/>
@@ -148,7 +164,7 @@
                                                     <action selector="playWelcomeVideo" destination="g39-vY-4w6" eventType="touchUpInside" id="QBd-wQ-3rv"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_We've improved the experience, but you'll be able to receive and manage your credentials as before." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Iu-wjr" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_We've improved the experience, but you'll be able to receive and manage your credentials as before." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Iu-wjr" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="281.33333333333331" width="334" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -157,7 +173,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please note that you are now required to back up your passphrase, but you can do so easily in the app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McB-xV-fyP" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please note that you are now required to back up your passphrase, but you can do so easily in the app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McB-xV-fyP" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="366.33333333333331" width="334" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -166,7 +182,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody2"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Tap continue to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ0-U4-Kxs" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Tap continue to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ0-U4-Kxs" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="451.33333333333331" width="334" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -175,8 +191,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody3"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-78-xzB" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="495.66666666666663" width="334" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-78-xzB" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="495.66666666666674" width="334" height="34"/>
                                                 <state key="normal" title="_Continue"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Continue"/>
@@ -185,7 +201,7 @@
                                                     <segue destination="i5s-AP-Aeo" kind="show" id="aCt-1w-xH5"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Blockcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Blockcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="249.00000000000003" width="334" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -254,18 +270,18 @@
         <!--Onboarding Current User-->
         <scene sceneID="0Aa-Fw-X41">
             <objects>
-                <viewController id="BDX-GA-efs" customClass="OnboardingCurrentUser" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BDX-GA-efs" customClass="OnboardingCurrentUser" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkj-ps-MRg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vY5-pE-shK">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-ws-ppc" userLabel="Container">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-ws-ppc" userLabel="Container">
                                         <rect key="frame" x="20" y="0.0" width="374" height="295.33333333333331"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Enter your passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-ac-PeD" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Enter your passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-ac-PeD" customClass="LabelC3T5S" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="16" width="374" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -274,7 +290,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="EnterPassphrase"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please type or paste your passphrase here:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-Qr-aZc" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please type or paste your passphrase here:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-Qr-aZc" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="49" width="374" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -297,8 +313,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkJ-EG-3bX" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="245.33333333333331" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkJ-EG-3bX" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="245.33333333333337" width="374" height="34"/>
                                                 <state key="normal" title="_Enter"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Enter"/>
@@ -357,19 +373,19 @@
         <!--New User-->
         <scene sceneID="35f-qu-Nzo">
             <objects>
-                <viewController title="New User" id="T7K-XY-0w3" customClass="NewUserViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New User" id="T7K-XY-0w3" customClass="NewUserViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxu-0f-vEN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHt-mR-CiN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RyP-ht-mHB" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="441.66666666666669"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyP-ht-mHB" userLabel="Container">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="546.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase Generated!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-Bm-Iw4" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="137" width="374" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase Generated!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-Bm-Iw4" customClass="LabelC3T5S" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="242" width="374" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -377,8 +393,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="PassphraseGenerated"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_There's a backup on this phone. You must create an extra backup in case you lose or switch devices." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-c0-sOB" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="169.33333333333334" width="374" height="61"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_There's a backup on this phone. You must create an extra backup in case you lose or switch devices." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-c0-sOB" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="274.33333333333331" width="374" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -386,8 +402,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="PassphraseDescription"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-Yg-UUa" customClass="LabelC3T3B" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="254.33333333333334" width="374" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-Yg-UUa" customClass="LabelC3T3B" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="359.33333333333331" width="374" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -396,9 +412,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPd-ZI-ehX" userLabel="Passphrase container">
-                                                <rect key="frame" x="0.0" y="282.66666666666669" width="374" height="85"/>
+                                                <rect key="frame" x="0.0" y="387.66666666666669" width="374" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-eb-6Ul" customClass="LabelC3T3S" customModule="certificates" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-eb-6Ul" customClass="LabelC3T3S" customModule="FluidCERTS" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="12" width="342" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -418,8 +434,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-4S-zBG" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="391.66666666666669" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-4S-zBG" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="496.66666666666663" width="374" height="34"/>
                                                 <state key="normal" title="_Create a Backup"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CreateBackup"/>
@@ -429,7 +445,7 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="990" image="illo_success" translatesAutoresizingMaskIntoConstraints="NO" id="exI-R6-GGd">
-                                                <rect key="frame" x="134.66666666666666" y="16" width="104.66666666666666" height="105"/>
+                                                <rect key="frame" x="134.66666666666666" y="16" width="104.66666666666666" height="210"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -490,22 +506,22 @@
         <!--Onboarding Backup Methods-->
         <scene sceneID="HDx-wo-1Xq">
             <objects>
-                <viewController id="i5s-AP-Aeo" customClass="OnboardingBackupMethods" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i5s-AP-Aeo" customClass="OnboardingBackupMethods" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJM-tU-YMm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9L-es-UFv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqY-ow-1Di" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="384"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="489"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illo_backup" translatesAutoresizingMaskIntoConstraints="NO" id="P5q-5d-qXN">
-                                                <rect key="frame" x="129" y="16" width="116" height="105"/>
+                                                <rect key="frame" x="129" y="16" width="116" height="210"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Select Backup Methods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-qm-tMU" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="137" width="374" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Select Backup Methods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-qm-tMU" customClass="LabelC3T5S" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="242" width="374" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -513,8 +529,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="SelectBackupMethods"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please select at least one option from the choices below:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-WK-gg0" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="169.33333333333334" width="374" height="40.666666666666657"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please select at least one option from the choices below:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-WK-gg0" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="274.33333333333331" width="374" height="40.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -522,8 +538,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="SelectOne"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFl-gf-qas" customClass="CheckmarkButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="234" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFl-gf-qas" customClass="CheckmarkButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="339" width="374" height="34"/>
                                                 <state key="normal" title="_Manual Hardcopy"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ManualHardCopy"/>
@@ -532,8 +548,8 @@
                                                     <action selector="backupManual" destination="i5s-AP-Aeo" eventType="touchUpInside" id="4wc-0w-PN3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Ah-B2Q" customClass="CheckmarkButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="276" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Ah-B2Q" customClass="CheckmarkButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="381" width="374" height="34"/>
                                                 <state key="normal" title="_Copy to E-mail or Clipboard"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CopyEmailClipboard"/>
@@ -542,8 +558,8 @@
                                                     <action selector="backupCopy" destination="i5s-AP-Aeo" eventType="touchUpInside" id="LkO-Nw-57D"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-IF-EY4" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="334" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-IF-EY4" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="439" width="374" height="34"/>
                                                 <state key="normal" title="_Select At Least One to Continue"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="SelectOneButton"/>
@@ -611,15 +627,15 @@
         <!--Manual Backup-->
         <scene sceneID="Hgm-kK-cQi">
             <objects>
-                <viewController storyboardIdentifier="manualBackup" title="Manual Backup" id="CdH-oJ-v0k" customClass="OnboardingManualBackup" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="manualBackup" title="Manual Backup" id="CdH-oJ-v0k" customClass="OnboardingManualBackup" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9pM-qE-SXt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-bs-3BH">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-7Y-4vX" userLabel="Container">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-7Y-4vX" userLabel="Container">
                                         <rect key="frame" x="20" y="0.0" width="374" height="364.66666666666669"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illo_writtenbackup" translatesAutoresizingMaskIntoConstraints="NO" id="j3U-2e-aVj">
@@ -628,7 +644,7 @@
                                                     <constraint firstAttribute="width" secondItem="j3U-2e-aVj" secondAttribute="height" multiplier="1:1" id="dQJ-VD-IHL"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Manual Hardcopy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-wT-KoM" customClass="LabelC3T5S" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Manual Hardcopy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-wT-KoM" customClass="LabelC3T5S" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136.66666666666666" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -637,7 +653,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ManualHardCopy"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Write your passphrase by hand on a piece of paper and store it in a secure location." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-p9-n0G" customClass="LabelC6T3R" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Write your passphrase by hand on a piece of paper and store it in a secure location." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-p9-n0G" customClass="LabelC6T3R" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="169" width="374" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -649,7 +665,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlN-eo-GeR" userLabel="Passphrase container">
                                                 <rect key="frame" x="0.0" y="221.66666666666663" width="374" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-he-eXT" customClass="LabelC1T4S" customModule="certificates" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-he-eXT" customClass="LabelC1T4S" customModule="FluidCERTS" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="12" width="342" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -669,7 +685,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-LW-82b" customClass="PrimaryButton" customModule="certificates" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-LW-82b" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="330.66666666666669" width="374" height="34"/>
                                                 <state key="normal" title="_Done"/>
                                                 <userDefinedRuntimeAttributes>
@@ -732,22 +748,22 @@
         <!--My Passphrase-->
         <scene sceneID="oLD-cs-gSj">
             <objects>
-                <viewController storyboardIdentifier="MyPassphrase" title="My Passphrase" id="hEE-aO-pVh" customClass="MyPassphraseViewController" customModule="certificates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPassphrase" title="My Passphrase" id="hEE-aO-pVh" customClass="MyPassphraseViewController" customModule="FluidCERTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNm-qL-fPo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-9l-iht">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vxr-dN-nYu" userLabel="Container">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxr-dN-nYu" userLabel="Container">
                                         <rect key="frame" x="20" y="0.0" width="374" height="203.33333333333334"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Y-qF-nOc" userLabel="Passphrase container">
-                                                <rect key="frame" x="0.0" y="56.333333333333329" width="374" height="84.999999999999986"/>
+                                                <rect key="frame" x="0.0" y="56.333333333333343" width="374" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-az-KD6" customClass="LabelC1T4S" customModule="certificates" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="12" width="342" height="61"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-az-KD6" customClass="LabelC1T4S" customModule="FluidCERTS" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="11.999999999999993" width="342" height="61.000000000000007"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -766,7 +782,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-rK-XlR" customClass="SecondaryButton" customModule="certificates" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-rK-XlR" customClass="SecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="165.33333333333334" width="374" height="34"/>
                                                 <state key="normal" title="_Copy to E-mail or Clipboard"/>
                                                 <userDefinedRuntimeAttributes>
@@ -777,7 +793,7 @@
                                                     <action selector="backupCopy" destination="i5s-AP-Aeo" eventType="touchUpInside" id="r2B-id-lO6"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_My Passphrase" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-At-8Ka" customClass="LabelC5T2B" customModule="certificates" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_My Passphrase" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-At-8Ka" customClass="LabelC5T2B" customModule="FluidCERTS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24" width="374" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>

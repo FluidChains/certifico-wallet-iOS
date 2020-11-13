@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BackupRestoreViewController" customModule="FluidCERTS" customModuleProvider="target">
+            <connections>
+                <outlet property="backupButton" destination="UNd-oM-03t" id="Ooj-Mt-AYP"/>
+                <outlet property="deleteAllButton" destination="3YK-OK-9jy" id="Jkb-wv-s9x"/>
+                <outlet property="restoreButton" destination="6Er-Cd-775" id="7Ak-tg-Uvu"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Zye-nk-FDq"/>
+                <outlet property="viewContainer" destination="oBo-FA-fkR" id="zjk-rJ-1zd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-FA-fkR">
+                    <rect key="frame" x="0.0" y="47" width="414" height="802"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNd-oM-03t" customClass="SecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="150" width="414" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Backup Now"/>
+                            <connections>
+                                <action selector="BackupNow" destination="-1" eventType="touchUpInside" id="PbY-NE-yAj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Er-Cd-775" customClass="SecondaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="191" width="414" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Restore"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YK-OK-9jy" customClass="PrimaryButton" customModule="FluidCERTS" customModuleProvider="target">
+                            <rect key="frame" x="8" y="232" width="350" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Delete All"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Backup: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-HF-WlH" customClass="LabelC1T4S" customModule="FluidCERTS" customModuleProvider="target">
+                            <rect key="frame" x="8" y="27" width="139" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jun 3, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTU-pe-0MQ" customClass="LabelC7T2R" customModule="FluidCERTS" customModuleProvider="target">
+                            <rect key="frame" x="128" y="27" width="92" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstItem="UNd-oM-03t" firstAttribute="centerX" secondItem="oBo-FA-fkR" secondAttribute="centerX" id="1Vl-bg-jRO"/>
+                        <constraint firstItem="3YK-OK-9jy" firstAttribute="width" secondItem="oBo-FA-fkR" secondAttribute="width" id="DSx-Q1-Yb1"/>
+                        <constraint firstItem="6Er-Cd-775" firstAttribute="top" secondItem="UNd-oM-03t" secondAttribute="bottom" constant="8" id="Gau-CJ-mXM"/>
+                        <constraint firstItem="UNd-oM-03t" firstAttribute="width" secondItem="oBo-FA-fkR" secondAttribute="width" id="H4v-3A-1rK"/>
+                        <constraint firstItem="3YK-OK-9jy" firstAttribute="top" secondItem="6Er-Cd-775" secondAttribute="bottom" constant="8" id="TMJ-No-xzC"/>
+                        <constraint firstItem="6Er-Cd-775" firstAttribute="centerX" secondItem="oBo-FA-fkR" secondAttribute="centerX" id="otr-gp-PWD"/>
+                        <constraint firstItem="UNd-oM-03t" firstAttribute="top" secondItem="oBo-FA-fkR" secondAttribute="top" constant="150" id="x8p-DD-4vJ"/>
+                        <constraint firstItem="6Er-Cd-775" firstAttribute="width" secondItem="oBo-FA-fkR" secondAttribute="width" id="yzL-3t-XWX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oBo-FA-fkR" secondAttribute="trailing" id="AYg-gv-9Ys"/>
+                <constraint firstItem="oBo-FA-fkR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="3" id="Elm-BD-rBG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oBo-FA-fkR" secondAttribute="bottom" constant="13" id="R33-8I-UQv"/>
+                <constraint firstItem="oBo-FA-fkR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RKq-3p-lkV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="142.02898550724638" y="109.82142857142857"/>
+        </view>
+    </objects>
+</document>

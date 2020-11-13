@@ -11,8 +11,8 @@ import Security
 import Blockcerts
 
 // reserved for backcompat
-private var unusedKeyIndexKeyV1 = "org.blockcerts.unused-key-index"
-private var unusedKeyIndexKey = "org.blockcerts.v2.unused-key-index"
+private var unusedKeyIndexKeyV1 = "org.fluidchains.unused-key-index"
+private var unusedKeyIndexKey = "org.fluidchains.v2.unused-key-index"
 
 
 public enum KeychainErrors : Error {
@@ -46,7 +46,7 @@ class Keychain {
         self.unusedKeyIndex = unusedKeyIndex
         self.mnemonic = mnemonic
         keychain = mnemonic.keychain
-        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/0'/0'/0")
+        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0")
     }
     
     func nextPublicAddress() -> String {
@@ -74,7 +74,7 @@ class Keychain {
 // MARK: Static methods for seed phrase generation
 extension Keychain {
     static func generateSeedPhrase() -> String {
-        let randomData = BTCRandomDataWithLength(32) as Data
+        let randomData = BTCRandomDataWithLength(16) as Data
         return generateSeedPhrase(withRandomData: randomData)
     }
     
@@ -87,7 +87,7 @@ extension Keychain {
 
 // MARK: Singleton access, and loading/storing
 extension Keychain {
-    static private var seedPhraseKey = "org.blockcerts.seed-phrase"
+    static private var seedPhraseKey = "org.fluidchains.seed-phrase"
     static private var _shared : Keychain? = nil
     static var shared : Keychain {
         if _shared == nil {

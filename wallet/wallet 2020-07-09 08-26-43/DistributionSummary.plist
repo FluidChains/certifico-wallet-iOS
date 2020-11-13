@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>wallet.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>DFAF1EDEB6BCFCA22EEF2459492D4DF9689252CF</string>
+				<key>dateExpires</key>
+				<string>5/29/21</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>DFAF1EDEB6BCFCA22EEF2459492D4DF9689252CF</string>
+						<key>dateExpires</key>
+						<string>5/29/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>Blockcerts.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>GZP78NJ5M9</string>
+						<key>name</key>
+						<string>Fluid Chains, Inc</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>DFAF1EDEB6BCFCA22EEF2459492D4DF9689252CF</string>
+						<key>dateExpires</key>
+						<string>5/29/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CommonCrypto.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>GZP78NJ5M9</string>
+						<key>name</key>
+						<string>Fluid Chains, Inc</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>DFAF1EDEB6BCFCA22EEF2459492D4DF9689252CF</string>
+						<key>dateExpires</key>
+						<string>5/29/21</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>JSONLD.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>GZP78NJ5M9</string>
+						<key>name</key>
+						<string>Fluid Chains, Inc</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>GZP78NJ5M9.org.fluidchains.fluidcerts-wallet</string>
+				<key>aps-environment</key>
+				<string>development</string>
+				<key>com.apple.developer.associated-domains</key>
+				<array>
+					<string>applinks:certs-test.exos.to</string>
+				</array>
+				<key>com.apple.developer.icloud-container-environment</key>
+				<string>Development</string>
+				<key>com.apple.developer.icloud-container-identifiers</key>
+				<array>
+					<string>iCloud.org.fluidchains.demo-app</string>
+				</array>
+				<key>com.apple.developer.icloud-services</key>
+				<array>
+					<string>CloudKit</string>
+				</array>
+				<key>com.apple.developer.team-identifier</key>
+				<string>GZP78NJ5M9</string>
+				<key>com.apple.developer.ubiquity-kvstore-identifier</key>
+				<string>GZP78NJ5M9.org.fluidchains.fluidcerts-wallet</string>
+				<key>com.apple.security.application-groups</key>
+				<array>
+					<string>group.org.fluidchains.cert-wallet</string>
+				</array>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>FluidCERTS.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>b0c52311-0ba6-40ef-b0b1-1e57e813dd8c</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: org.fluidchains.fluidcerts-wallet</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>GZP78NJ5M9</string>
+				<key>name</key>
+				<string>Fluid Chains, Inc</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

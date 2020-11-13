@@ -48,11 +48,15 @@ class IssuerCollectionViewController: UICollectionViewController {
 
         Logger.main.tag(tag).info("view_did_load")
         
+        
+        
         title = Localizations.BlockcertsWallet
 
         // Register for notifications
         NotificationCenter.default.addObserver(self, selector: #selector(redirectRequested(notification:)), name: NotificationNames.redirectToCertificate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onboardingCompleted(notification:)), name: NotificationNames.onboardingComplete, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCertificates(notification:)), name: NotificationNames.reloadCertificates, object: nil)
+
 
         // Set up the Collection View
         let cellNib = UINib(nibName: "IssuerCollectionViewCell", bundle: nil)
@@ -120,7 +124,32 @@ class IssuerCollectionViewController: UICollectionViewController {
     }
     
     func loadOnboardingIfNeeded() {
+                
         let hasPerformedBackup = OnboardingBackupMethods.hasPerformedBackup
+        if !Keychain.hasPassphrase() {
+            CloudKitManager().fetchSeedPhrase(completion: { (records, error) in
+                guard error == nil, let records = records else {
+                    print(error)
+                        as Any
+                    return
+                }
+                
+                if records.count > 0 {
+                    let iCloudSeed = records.first?["seed"] as! String
+                    do
+                    {
+                        try Keychain.updateShared(with: iCloudSeed)
+                        Logger.main.tag(self.tag).info("Restored from iCloud")
+                        
+                    } catch {
+                        Logger.main.tag(self.tag).info("Error restoring from iCloud")
+                    }
+                   
+                } else {
+                    Logger.main.tag(self.tag).info("No records in iCloud")
+                }
+            })
+        }
         if !Keychain.hasPassphrase() || !hasPerformedBackup {
             Logger.main.tag(tag).info("loading onboarding")
             let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
@@ -162,6 +191,10 @@ class IssuerCollectionViewController: UICollectionViewController {
     @objc func onboardingCompleted(notification: Notification) {
         precondition(Keychain.hasPassphrase(), "OnboardingCompleted notification shouldn't fire until they keychain has a passphrase.")
         processAutocompleteRequest()
+    }
+    
+    @objc func reloadCertificates(notification: Notification) {
+        loadCertificates(shouldReloadCollection: true)
     }
     
     func makeViewControllerVisible(action: @escaping () -> Void) {

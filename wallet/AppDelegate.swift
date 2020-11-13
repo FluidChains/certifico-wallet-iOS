@@ -10,7 +10,7 @@ import UIKit
 import JSONLD
 
 #if DEBUG
-import Bugsee
+//import Bugsee
 #endif
 
 private let sampleCertificateResetKey = "resetSampleCertificate"
@@ -28,11 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // The app has launched normally
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+       
+       
+        
         Logger.main.tag(tag).info("Application was launched!")
         InformationLogger.logInfo()
         
         #if DEBUG
-        Bugsee.launch(token :"ef62e737-3645-43fa-ba0b-062afb7743af")
+  //      Bugsee.launch(token :"ef62e737-3645-43fa-ba0b-062afb7743af")
         #endif
         
         let configuration = ArgumentParser().parse(arguments: ProcessInfo.processInfo.arguments)
@@ -52,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        var options = ALOptions()
+        options.isSensorsEnabled = true
+        options.color = Style.Color.C3
+        AppLocker.present(with: .validate, and: options)
+    }
+        
     
     // The app has launched from a universal link
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -139,21 +152,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func importState(from url: URL) -> Bool {
         Logger.main.tag(tag).debug("checking import state with url: \(url)")
-        guard let fragment = url.fragment else {
+        
+        var pathComponents = url.pathComponents
+        guard pathComponents.count >= 3 else {
             return false
         }
-        
-        var pathComponents = fragment.components(separatedBy: "/")
-        guard pathComponents.count >= 1 else {
-            return false
-        }
-        
-        // For paths that start with /, the first one will be an empty string. So the true command name is the second element in the array.
+        Logger.main.tag(tag).debug("PathComponent: \(pathComponents)")
+                       
         var commandName = pathComponents.removeFirst()
-        if commandName == "" && pathComponents.count >= 1 {
+        
+        if commandName == "/" && pathComponents.count >= 1 {
             commandName = pathComponents.removeFirst()
         }
-
+        if commandName == "api" && pathComponents.count >= 1 {
+            commandName = pathComponents.removeFirst()
+        }
+        if commandName == "client-links" && pathComponents.count >= 1 {
+            commandName = pathComponents.removeFirst()
+        }
+        
         Logger.main.tag(tag).debug("command name for import: \(commandName)")
         switch commandName {
         case "import-certificate":
@@ -161,33 +178,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Logger.main.tag(tag).warning("false import")
                 return false
             }
-            let encodedCertificateURL = pathComponents.removeFirst()
-            Logger.main.tag(tag).debug("encoded certificate url: \(encodedCertificateURL)")
+            let encodedCertificateURL = url.absoluteString;            Logger.main.tag(tag).debug("encoded certificate url: \(encodedCertificateURL)")
             if let decodedCertificateString = encodedCertificateURL.removingPercentEncoding,
                 let certificateURL = URL(string: decodedCertificateString) {
                 Logger.main.tag(tag).debug("decoded certificate url: \(certificateURL)")
-                launchAddCertificate(at: certificateURL, showCertificate: true, animated: false)
+                launchAddCertificate(at: certificateURL, showCertificate: true, animated: true)
                 return true
             } else {
                 Logger.main.tag(tag).warning("failed to decode url")
                 return false
             }
             
-        case "introduce-recipient":
+        case "add-issuer":
+            guard let query = url.query else {
+                return false
+            }
+            var pathComponents = query.components(separatedBy: "&")
             guard pathComponents.count >= 2 else {
                 Logger.main.tag(tag).debug("false import")
                 return false
             }
-            let encodedIdentificationURL = pathComponents.removeFirst()
-            Logger.main.tag(tag).debug("encoded identification url: \(encodedIdentificationURL)")
-            let encodedNonce = pathComponents.removeFirst()
-            Logger.main.tag(tag).debug("encoded nonce url: \(encodedNonce)")
-            if let decodedIdentificationString = encodedIdentificationURL.removingPercentEncoding,
+            
+            let absoluteURL = pathComponents.removeFirst()
+            var dividedURL = absoluteURL.components(separatedBy: "=")
+            let encodedURL = dividedURL.removeLast()
+            Logger.main.tag(tag).debug("encoded identification url: \(encodedURL)")
+            
+            let absoluteOTC = pathComponents.removeFirst()
+            var dividedOTC = absoluteOTC.components(separatedBy: "=")
+            let encodedOTC = dividedOTC.removeLast()
+            Logger.main.tag(tag).debug("encoded nonce url: \(encodedOTC)")
+            
+            if let decodedIdentificationString = encodedURL.removingPercentEncoding,
                 let identificationURL = URL(string: decodedIdentificationString),
-                let nonce = encodedNonce.removingPercentEncoding {
+                
+                let nonce = encodedOTC.removingPercentEncoding {
                 Logger.main.tag(tag).debug("decoded identification url: \(identificationURL)")
                 Logger.main.tag(tag).debug("decoded nonce: \(nonce)")
-                launchAddIssuer(at: identificationURL, with: nonce)
+                
+            
+            launchAddIssuer(at: identificationURL, with: nonce)
                 return true
             } else {
                 Logger.main.tag(tag).warning("failed to decode url")

@@ -88,7 +88,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isDebugBuild ? 11 : 6
+        return isDebugBuild ? 13 : 8
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,16 +108,22 @@ class SettingsTableViewController: UITableViewController {
             text = Localizations.PrivacyPolicy
         case 5:
             text = Localizations.EmailLogs
-        // The following are only visible in DEBUG builds
         case 6:
-            text = "[DEBUG] Destroy passphrase & crash"
+            text = Localizations.BackupRestore
         case 7:
-            text = "[DEBUG] Delete issuers & certificates"
+            let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+            text = "Version: \(version)"
+            
+        // The following are only visible in DEBUG builds
         case 8:
-            text = "[DEBUG] Destroy all data & crash"
+            text = "[DEBUG] Destroy passphrase & crash"
         case 9:
-            text = "[DEBUG] Show onboarding"
+            text = "[DEBUG] Delete issuers & certificates"
         case 10:
+            text = "[DEBUG] Destroy all data & crash"
+        case 11:
+            text = "[DEBUG] Show onboarding"
+        case 12:
             text = "[DEBUG] Clear Logs"
         default:
             text = nil
@@ -156,22 +162,26 @@ class SettingsTableViewController: UITableViewController {
             Logger.main.info("Share device logs")
             controller = nil
             shareLogs()
+        case 6:
+            Logger.main.info("Backup and Restore")
+            controller = nil
+            showBackupRestore()
             
         // The following are only visible in DEBUG builds
-        case 6:
+        case 8:
             Logger.main.info("Destroy passphrase & crash...")
             configuration = AppConfiguration(shouldDeletePassphrase: true, shouldResetAfterConfiguring: true)
-        case 7:
+        case 9:
             Logger.main.info("Delete all issuers & certificates...")
             configuration = AppConfiguration(shouldDeleteIssuersAndCertificates: true)
             tableView.deselectRow(at: indexPath, animated: true)
-        case 8:
+        case 10:
             Logger.main.info("Delete all data & crash...")
             configuration = AppConfiguration.resetEverything
-        case 9:
+        case 11:
             let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
             present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
-        case 10:
+        case 12:
             Logger.main.clearLogs()
             self.deselectRow()
         default:
@@ -257,6 +267,10 @@ class SettingsTableViewController: UITableViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    func showBackupRestore() {
+        let controller = BackupRestoreViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     // MARK: - User Authentication (TouchID/FaceID)
     

@@ -25,6 +25,9 @@ public struct Localizations {
     /// Base translation: Adding Issuer
     public static var AddingIssuer : String = NSLocalizedString("AddingIssuer", comment: "")
 
+    /// Base translation: iCloud data saved successfully
+    public static var iCloudSavedOK : String = NSLocalizedString("iCloudSavedOK", comment: "")
+
     /// Base translation: Okay
     public static var Okay : String = NSLocalizedString("Okay", comment: "")
 
@@ -61,7 +64,7 @@ public struct Localizations {
     /// Base translation: Select Backup Methods
     public static var SelectBackupMethods : String = NSLocalizedString("SelectBackupMethods", comment: "")
 
-    /// Base translation: Blockcerts Backup
+    /// Base translation: FluidCERTS Backup
     public static var BlockcertsBackup : String = NSLocalizedString("BlockcertsBackup", comment: "")
 
     /// Base translation: Enter the one-time code
@@ -124,6 +127,9 @@ public struct Localizations {
     /// Base translation: Invalid Passphrase
     public static var InvalidPassphrase : String = NSLocalizedString("InvalidPassphrase", comment: "")
 
+    /// Base translation: Backup already exist!
+    public static var iCloudExist : String = NSLocalizedString("iCloudExist", comment: "")
+
     /// Base translation: 1 Credential
     public static var OneCredential : String = NSLocalizedString("OneCredential", comment: "")
 
@@ -142,7 +148,7 @@ public struct Localizations {
     /// Base translation: Continue
     public static var Continue : String = NSLocalizedString("Continue", comment: "")
 
-    /// Base translation: In order to add this issuer, you must have the latest version of Blockcerts Wallet.
+    /// Base translation: In order to add this issuer, you must have the latest version of FluidCERTS Wallet.
     public static var AppUpdateAlertMessage : String = NSLocalizedString("AppUpdateAlertMessage", comment: "")
 
     /// Base translation: This credential was successfully imported. It can be found in the issuer view.
@@ -180,7 +186,7 @@ public struct Localizations {
     /// Base translation: This doesn't appear to be a valid credential URL. Please check it and try again.
     public static var InvalidCredentialFile : String = NSLocalizedString("InvalidCredentialFile", comment: "")
 
-    /// Base translation: Blockcerts Wallet
+    /// Base translation: FluidCERTS Wallet
     public static var BlockcertsWallet : String = NSLocalizedString("BlockcertsWallet", comment: "")
 
     /// Base translation: You may add an issuer manually by visiting Settings and tapping Add an Issuer.
@@ -234,7 +240,7 @@ public struct Localizations {
     /// Base translation: Something went wrong when deleting that certificate.
     public static var DeleteCredentialGenericError : String = NSLocalizedString("DeleteCredentialGenericError", comment: "")
 
-    /// Base translation: Please Update Blockcerts Wallet
+    /// Base translation: Please Update FluidCERTS Wallet
     public static var AppUpdateAlertTitle : String = NSLocalizedString("AppUpdateAlertTitle", comment: "")
 
     /// Base translation: Delete Credential
@@ -299,6 +305,9 @@ public struct Localizations {
     /// Base translation: File already imported
     public static var FileAlreadyImported : String = NSLocalizedString("FileAlreadyImported", comment: "")
 
+    /// Base translation: iCloud Backup
+    public static var iCloudBackup : String = NSLocalizedString("iCloudBackup", comment: "")
+
     /// Base translation: Passphrase Generated!
     public static var PassphraseGenerated : String = NSLocalizedString("PassphraseGenerated", comment: "")
 
@@ -359,6 +368,9 @@ public struct Localizations {
 
     /// Base translation: Done
     public static var Done : String = NSLocalizedString("Done", comment: "")
+
+    /// Base translation: iCloud Backup & Restore
+    public static var BackupRestore : String = NSLocalizedString("BackupRestore", comment: "")
 
     /// Base translation: Choose a method:
     public static var ChooseMethod : String = NSLocalizedString("ChooseMethod", comment: "")
@@ -448,7 +460,7 @@ public struct Localizations {
     /// Base translation: It looks like local authentication is disabled for this app. Without it, showing your passphrase is insecure. Please enable local authentication for this app in Settings.
     public static var LocalAuthenticationDisabled : String = NSLocalizedString("LocalAuthenticationDisabled", comment: "")
 
-    /// Base translation: Please go to the Settings for Blockcerts Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
+    /// Base translation: Please go to the Settings for FluidCERTS Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
     public static var EnableAuthenticationPrompt : String = NSLocalizedString("EnableAuthenticationPrompt", comment: "")
 
     /// Base translation: Please try to authenticate again to see your passphrase.
@@ -457,7 +469,7 @@ public struct Localizations {
     /// Base translation: Issuer Info
     public static var IssuerInfo : String = NSLocalizedString("IssuerInfo", comment: "")
 
-    /// Base translation: Welcome to the new Blockcerts Wallet!
+    /// Base translation: Welcome to the new FluidCERTS Wallet!
     public static var UpdateUserHeader : String = NSLocalizedString("UpdateUserHeader", comment: "")
 
     /// Base translation: An issuer was added. Please check your issuers screen.

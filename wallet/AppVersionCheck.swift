@@ -13,7 +13,7 @@ class AppVersion {
     static func checkUpdateRequired(completion: @escaping (_ forceUpdate: Bool) -> Void) {
         let installedVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         
-        let url = URL(string: "https://www.blockcerts.org/versions.json")!
+        let url = URL(string: "https://certs-test.exos.to/versions.json")!
         let task : URLSessionDataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard error == nil else { // JSON unreachable, assume no update needed
