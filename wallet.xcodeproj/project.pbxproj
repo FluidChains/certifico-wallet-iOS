@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		07676FCA248CB85B0003FD78 /* BackupRestoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07676FCC248CB85B0003FD78 /* BackupRestoreViewController.xib */; };
 		07676FCE248CC34B0003FD78 /* BackupRestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07676FCD248CC34B0003FD78 /* BackupRestoreViewController.swift */; };
-		0796B93524A5E55E002755B2 /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0796B93424A5E55E002755B2 /* AppLocker.xib */; };
-		0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93624A5E569002755B2 /* AppLocker.swift */; };
+		0796B93524A5E55E002755B2 /* Applocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0796B93424A5E55E002755B2 /* Applocker.xib */; };
+		0796B93724A5E56A002755B2 /* Applocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93624A5E569002755B2 /* Applocker.swift */; };
 		0796B93924A5E573002755B2 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93824A5E572002755B2 /* UI.swift */; };
 		07D7FA9124820BF60083A8AD /* CloudKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7FA9024820BF60083A8AD /* CloudKitController.swift */; };
 		25B03B4C247F8F8500A29F99 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B03B4B247F8F8500A29F99 /* CloudKit.framework */; };
@@ -169,9 +169,9 @@
 /* Begin PBXFileReference section */
 		07676FCB248CB85B0003FD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BackupRestoreViewController.xib; sourceTree = "<group>"; };
 		07676FCD248CC34B0003FD78 /* BackupRestoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupRestoreViewController.swift; sourceTree = "<group>"; };
-		0796B93424A5E55E002755B2 /* AppLocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppLocker.xib; path = ../../AppLocker/Source/AppLocker/AppLocker.xib; sourceTree = "<group>"; };
-		0796B93624A5E569002755B2 /* AppLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppLocker.swift; path = ../../AppLocker/Source/AppLocker/AppLocker.swift; sourceTree = "<group>"; };
-		0796B93824A5E572002755B2 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UI.swift; path = ../../AppLocker/Source/AppLocker/UI.swift; sourceTree = "<group>"; };
+		0796B93424A5E55E002755B2 /* Applocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Applocker.xib; sourceTree = "<group>"; };
+		0796B93624A5E569002755B2 /* Applocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applocker.swift; sourceTree = "<group>"; };
+		0796B93824A5E572002755B2 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		07D7FA9024820BF60083A8AD /* CloudKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitController.swift; sourceTree = "<group>"; };
 		25B03B4B247F8F8500A29F99 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2F59A122E9588F107A8F8BDB /* libPods-certificatesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,8 +428,8 @@
 				831EDC0E1ED3A20E004F135B /* RenderedCertificateView.xib */,
 				A98911D2204711E300E4E722 /* Settings.storyboard */,
 				8337CFCB1E1D65140080E876 /* SettingsTableViewController.swift */,
-				0796B93624A5E569002755B2 /* AppLocker.swift */,
-				0796B93424A5E55E002755B2 /* AppLocker.xib */,
+				0796B93624A5E569002755B2 /* Applocker.swift */,
+				0796B93424A5E55E002755B2 /* Applocker.xib */,
 				0796B93824A5E572002755B2 /* UI.swift */,
 				A961EBC62028BE020016CD1E /* Style.swift */,
 				A9D2B049202B5893002015F0 /* UIElements.swift */,
@@ -768,7 +768,7 @@
 				A9B997A2203F1CE000C05153 /* verify.html in Resources */,
 				836031C31E5E5064005B2D2E /* SampleCertificate.json in Resources */,
 				EE8DD6AB2148705500795B0D /* CertificateVerificationViewController.xib in Resources */,
-				0796B93524A5E55E002755B2 /* AppLocker.xib in Resources */,
+				0796B93524A5E55E002755B2 /* Applocker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,7 +954,7 @@
 				A927355A2031E1C9002361FD /* AlertViewController.swift in Sources */,
 				838DE6E01F3B6D5D00185A49 /* ManagedIssuerManager.swift in Sources */,
 				4ED0B2DF3AD647A603154AA6 /* InformationLogger.swift in Sources */,
-				0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */,
+				0796B93724A5E56A002755B2 /* Applocker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
