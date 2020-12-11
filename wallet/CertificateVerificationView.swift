@@ -166,7 +166,7 @@ class CertificateVerificationView: UIView {
         
         // Draw progress on track
         if currentSubstepCode != nil {
-            context.setStrokeColor(Style.Color.C4.cgColor)
+            context.setStrokeColor(Style.Color.C3.cgColor)
             context.setLineWidth(trackWidth)
             context.setLineCap(.round)
             context.beginPath()

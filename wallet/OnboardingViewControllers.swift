@@ -21,7 +21,8 @@ class OnboardingControllerBase : UIViewController {
     
     
     @IBAction func playWelcomeVideo() {
-        guard let path = Bundle.main.path(forResource: "introduction", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: Localizations.VideoIntroduction, ofType:"mp4") else {
+            print(Localizations.VideoIntroduction)
             print("Video file not found")
             return
         }
@@ -76,9 +77,9 @@ class ScrollingOnboardingControllerBase : OnboardingControllerBase {
 
 class LandingScreenViewController : OnboardingControllerBase {
     
-    @IBOutlet weak var icloudRestoreButton: HomeSecondaryButton!
+   // @IBOutlet weak var icloudRestoreButton: HomeSecondaryButton!
     
-    @IBAction func icloudRestore() {
+    /*@IBAction func icloudRestore() {
               
         var seed = CKRecord(recordType: "Seed")
         var index = CKRecord(recordType: "Index")
@@ -140,7 +141,7 @@ class LandingScreenViewController : OnboardingControllerBase {
         
             
         
-    }
+    }*/
     
     
     override func viewDidLoad() {
@@ -171,7 +172,6 @@ class WelcomeReturningUsersViewController : ScrollingOnboardingControllerBase {
         view.backgroundColor = Style.Color.C1
         title = Localizations.Welcome
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.hasReenteredPassphrase)
-        videoPlayButton.accessibilityLabel = Localizations.PlayIntroVideo
     }
     
     override func viewDidLayoutSubviews() {
@@ -215,7 +215,7 @@ class NewUserViewController : ScrollingOnboardingControllerBase {
 class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityItemSource {
     @IBOutlet var manualButton : CheckmarkButton!
     @IBOutlet var copyButton : CheckmarkButton!
-    @IBOutlet var icloudButton : CheckmarkButton!
+   // @IBOutlet var icloudButton : CheckmarkButton!
     @IBOutlet var continueButton : PrimaryButton!
     
     private let manager = CloudKitManager()
@@ -253,7 +253,7 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
     
     var passphrase : String?
       
-    @IBAction func icloudBackup() {
+   @IBAction func icloudBackup() {
         manager.fetchSeedPhrase(completion: { (records, error) in
             guard error == nil, let records = records else {
                 return
@@ -355,15 +355,21 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
         }
     }
     
+    var window: UIWindow?
+    
     @IBAction func dismiss() {
-        dismiss(animated: true, completion: nil)
+        
+            // Fallback on earlier versions
+            dismiss(animated: true, completion: nil)
+            
+        
     }
     
     fileprivate func updateStates() {
         manualButton.checked = hasWrittenPasscode
-        icloudButton.checked = hasiCloudBackup
+    //  icloudButton.checked = hasiCloudBackup
         copyButton.checked = hasCopiedPasscode
-        continueButton.isEnabled = hasiCloudBackup && hasWrittenPasscode || hasCopiedPasscode
+        continueButton.isEnabled = hasWrittenPasscode || hasCopiedPasscode
 
         let title = continueButton.isEnabled ? Localizations.Done : Localizations.SelectOneButton
         continueButton.setTitle(title, for: .normal)
@@ -376,7 +382,7 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Localizations.BackupPassphrase
-        checkiCloud()
+       // checkiCloud()
     }
     
     func checkiCloud() {

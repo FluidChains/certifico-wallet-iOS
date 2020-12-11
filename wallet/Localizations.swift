@@ -19,6 +19,9 @@ public struct Localizations {
     /// Base translation: Email Logs
     public static var EmailLogs : String = NSLocalizedString("EmailLogs", comment: "")
 
+    /// Base translation: introduction
+    public static var VideoIntroduction : String = NSLocalizedString("VideoIntroduction", comment: "")
+
     /// Base translation: There was an error adding this issuer. This can happen when a single-use invitation link is clicked more than once. Please check with the issuer and request a new invitation, if necessary.
     public static var AddIssuerFailMessage : String = NSLocalizedString("AddIssuerFailMessage", comment: "")
 
@@ -30,6 +33,9 @@ public struct Localizations {
 
     /// Base translation: Okay
     public static var Okay : String = NSLocalizedString("Okay", comment: "")
+
+    /// Base translation: Learn more
+    public static var LearnMore : String = NSLocalizedString("LearnMore", comment: "")
 
     /// Base translation: Enter
     public static var Enter : String = NSLocalizedString("Enter", comment: "")
@@ -64,7 +70,7 @@ public struct Localizations {
     /// Base translation: Select Backup Methods
     public static var SelectBackupMethods : String = NSLocalizedString("SelectBackupMethods", comment: "")
 
-    /// Base translation: FluidCERTS Backup
+    /// Base translation: Certifico Backup
     public static var BlockcertsBackup : String = NSLocalizedString("BlockcertsBackup", comment: "")
 
     /// Base translation: Enter the one-time code
@@ -148,7 +154,7 @@ public struct Localizations {
     /// Base translation: Continue
     public static var Continue : String = NSLocalizedString("Continue", comment: "")
 
-    /// Base translation: In order to add this issuer, you must have the latest version of FluidCERTS Wallet.
+    /// Base translation: In order to add this issuer, you must have the latest version of Certifico Wallet.
     public static var AppUpdateAlertMessage : String = NSLocalizedString("AppUpdateAlertMessage", comment: "")
 
     /// Base translation: This credential was successfully imported. It can be found in the issuer view.
@@ -186,7 +192,7 @@ public struct Localizations {
     /// Base translation: This doesn't appear to be a valid credential URL. Please check it and try again.
     public static var InvalidCredentialFile : String = NSLocalizedString("InvalidCredentialFile", comment: "")
 
-    /// Base translation: FluidCERTS Wallet
+    /// Base translation: Certifico Wallet
     public static var BlockcertsWallet : String = NSLocalizedString("BlockcertsWallet", comment: "")
 
     /// Base translation: You may add an issuer manually by visiting Settings and tapping Add an Issuer.
@@ -240,7 +246,7 @@ public struct Localizations {
     /// Base translation: Something went wrong when deleting that certificate.
     public static var DeleteCredentialGenericError : String = NSLocalizedString("DeleteCredentialGenericError", comment: "")
 
-    /// Base translation: Please Update FluidCERTS Wallet
+    /// Base translation: Please Update Certifico Wallet
     public static var AppUpdateAlertTitle : String = NSLocalizedString("AppUpdateAlertTitle", comment: "")
 
     /// Base translation: Delete Credential
@@ -460,7 +466,7 @@ public struct Localizations {
     /// Base translation: It looks like local authentication is disabled for this app. Without it, showing your passphrase is insecure. Please enable local authentication for this app in Settings.
     public static var LocalAuthenticationDisabled : String = NSLocalizedString("LocalAuthenticationDisabled", comment: "")
 
-    /// Base translation: Please go to the Settings for FluidCERTS Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
+    /// Base translation: Please go to the Settings for Certifico Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
     public static var EnableAuthenticationPrompt : String = NSLocalizedString("EnableAuthenticationPrompt", comment: "")
 
     /// Base translation: Please try to authenticate again to see your passphrase.
@@ -469,7 +475,7 @@ public struct Localizations {
     /// Base translation: Issuer Info
     public static var IssuerInfo : String = NSLocalizedString("IssuerInfo", comment: "")
 
-    /// Base translation: Welcome to the new FluidCERTS Wallet!
+    /// Base translation: Welcome to the new Certifico Wallet!
     public static var UpdateUserHeader : String = NSLocalizedString("UpdateUserHeader", comment: "")
 
     /// Base translation: An issuer was added. Please check your issuers screen.
