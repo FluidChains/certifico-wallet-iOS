@@ -9,10 +9,11 @@
 import Foundation
 import Security
 import Blockcerts
+import HDWalletKit
 
 // reserved for backcompat
-private var unusedKeyIndexKeyV1 = "org.fluidchains.unused-key-index"
-private var unusedKeyIndexKey = "org.fluidchains.v2.unused-key-index"
+private var unusedKeyIndexKeyV1 = "io.certifico.unused-key-index"
+private var unusedKeyIndexKey = "io.certifico.v2.unused-key-index"
 
 
 public enum KeychainErrors : Error {
@@ -21,16 +22,16 @@ public enum KeychainErrors : Error {
 
 class Keychain {
     public var seedPhrase : String {
-        return mnemonic.words.compactMap({ $0 as? String}).joined(separator: " ")
+        return mnemonic
     }
     private var unusedKeyIndex : UInt32 {
         didSet {
             UserDefaults.standard.set(Int(unusedKeyIndex), forKey: unusedKeyIndexKey)
         }
     }
-    private let mnemonic : BTCMnemonic
-    private let keychain : BTCKeychain
-    private let accountKeychain : BTCKeychain
+    private let mnemonic : String
+    // private let keychain :
+    // private let accountKeychain : Wallet
     
     convenience init(seedPhrase: String) {
         // This lookup returns 0 if it can't be found.
@@ -39,33 +40,43 @@ class Keychain {
     }
     
     init(seedPhrase: String, unusedKeyIndex: UInt32) {
-        let words = seedPhrase.components(separatedBy: " ")
+        
+        self.mnemonic = seedPhrase
+        self.unusedKeyIndex = unusedKeyIndex
+       /* let words = seedPhrase.components(separatedBy: " ")
         guard let mnemonic = BTCMnemonic(words: words, password: "", wordListType: .english) else {
             fatalError("Can't start a Keychain with invalid phrase:\"\(seedPhrase)\"")
         }
         self.unusedKeyIndex = unusedKeyIndex
         self.mnemonic = mnemonic
         keychain = mnemonic.keychain
-        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0")
+        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0") */
     }
     
-    func nextPublicAddress() -> String {
-        let key = accountKeychain.key(at: unusedKeyIndex)
+    func generateMnemonic() -> String {
+        let mnemonicGen = Mnemonic.create()
+        return mnemonicGen
+    }
+    
+    func nextPublicAddress(chain: Coin) -> String {
+        
+        let wallet = generateWallet(chain: chain)
+        let address = wallet.generateAccount(at: unusedKeyIndex).address
         unusedKeyIndex += 1
         
-        return key?.address.string ?? ""
+        return address
+        
+       /* let key = accountKeychain.key(at: unusedKeyIndex)
+        unusedKeyIndex += 1
+        
+        return key?.address.string ?? ""*/
     }
     
-    func has(publicKey : String) -> Bool {
-        guard let keyData = publicKey.asHexData() else {
-            // If the publicKey isn't a valid hex string, then this keychain obviously doesn't have it.
-            return false
-        }
+    func generateWallet(chain: Coin) -> Wallet {
+        let seed = Mnemonic.createSeed(mnemonic: self.mnemonic)
+        let wallet = Wallet(seed: seed, coin: chain)
         
-        let key = BTCKey(publicKey: keyData)
-        let limit : UInt = 10 // arbitrary. What's a good limit?
-        
-        return nil == accountKeychain.find(forPublicKey: key, hardened: true, limit: limit) // Also unsure of hardened value.
+        return wallet
     }
     
     
@@ -74,20 +85,18 @@ class Keychain {
 // MARK: Static methods for seed phrase generation
 extension Keychain {
     static func generateSeedPhrase() -> String {
-        let randomData = BTCRandomDataWithLength(16) as Data
-        return generateSeedPhrase(withRandomData: randomData)
+        return Mnemonic.create()
     }
     
     static func generateSeedPhrase(withRandomData randomData: Data) -> String {
-        let mn = BTCMnemonic(entropy: randomData, password: "", wordListType: .english)
-        
-        return mn?.words.compactMap({ $0 as? String }).joined(separator: " ") ?? ""
+        let mn = Mnemonic.create(entropy: randomData, language: .english)
+        return mn
     }
 }
 
 // MARK: Singleton access, and loading/storing
 extension Keychain {
-    static private var seedPhraseKey = "org.fluidchains.seed-phrase"
+    static private var seedPhraseKey = "io.certifico.seed-phrase"
     static private var _shared : Keychain? = nil
     static var shared : Keychain {
         if _shared == nil {
@@ -142,9 +151,8 @@ extension Keychain {
     }
     
     public static func isValidPassphrase(_ passphrase: String) -> Bool {
-        let words = passphrase.components(separatedBy: " ")
-        let mnemonic = BTCMnemonic(words: words, password: "", wordListType: .english)
-        return (mnemonic != nil)
+        
+        return true
     }
     
     public static func hasPassphrase() -> Bool {

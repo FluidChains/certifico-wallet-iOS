@@ -17,7 +17,7 @@ private let segueToViewIssuer = "ShowIssuerDetail"
 
 public enum AutocompleteRequest {
     case none
-    case addIssuer(identificationURL: URL, nonce : String)
+    case addIssuer(identificationURL: URL, nonce : String, chain: String)
     case addCertificate(certificateURL : URL, silently: Bool, animated: Bool)
 }
  
@@ -48,15 +48,12 @@ class IssuerCollectionViewController: UICollectionViewController {
 
         Logger.main.tag(tag).info("view_did_load")
         
-        
-        
         title = Localizations.BlockcertsWallet
 
         // Register for notifications
         NotificationCenter.default.addObserver(self, selector: #selector(redirectRequested(notification:)), name: NotificationNames.redirectToCertificate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onboardingCompleted(notification:)), name: NotificationNames.onboardingComplete, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCertificates(notification:)), name: NotificationNames.reloadCertificates, object: nil)
-
 
         // Set up the Collection View
         let cellNib = UINib(nibName: "IssuerCollectionViewCell", bundle: nil)
@@ -124,32 +121,7 @@ class IssuerCollectionViewController: UICollectionViewController {
     }
     
     func loadOnboardingIfNeeded() {
-                
         let hasPerformedBackup = OnboardingBackupMethods.hasPerformedBackup
-        if !Keychain.hasPassphrase() {
-            CloudKitManager().fetchSeedPhrase(completion: { (records, error) in
-                guard error == nil, let records = records else {
-                    print(error)
-                        as Any
-                    return
-                }
-                
-                if records.count > 0 {
-                    let iCloudSeed = records.first?["seed"] as! String
-                    do
-                    {
-                        try Keychain.updateShared(with: iCloudSeed)
-                        Logger.main.tag(self.tag).info("Restored from iCloud")
-                        
-                    } catch {
-                        Logger.main.tag(self.tag).info("Error restoring from iCloud")
-                    }
-                   
-                } else {
-                    Logger.main.tag(self.tag).info("No records in iCloud")
-                }
-            })
-        }
         if !Keychain.hasPassphrase() || !hasPerformedBackup {
             Logger.main.tag(tag).info("loading onboarding")
             let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
@@ -159,7 +131,8 @@ class IssuerCollectionViewController: UICollectionViewController {
                 let welcome = storyboard.instantiateViewController(withIdentifier: "WelcomeReturningUsers")
                 vc.viewControllers = [welcome]
             }
-            present(vc, animated: false, completion: nil)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
         }
     }
 
@@ -217,11 +190,11 @@ class IssuerCollectionViewController: UICollectionViewController {
         case .none:
             break
             
-        case .addIssuer(let identificationURL, let nonce):
+        case .addIssuer(let identificationURL, let nonce, let chain):
             Logger.main.tag(tag).info("Processing autocomplete request to add issuer at \(identificationURL)")
 
             makeViewControllerVisible() {
-                self.addIssuerFromUniversalLink(url: identificationURL, nonce: nonce)
+                self.addIssuerFromUniversalLink(url: identificationURL, nonce: nonce, chain: chain)
             }
             
         case .addCertificate(let certificateURL, let silently, let animated):
@@ -296,7 +269,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         }
     }
 
-    func addIssuerFromUniversalLink(url: URL, nonce: String) {
+    func addIssuerFromUniversalLink(url: URL, nonce: String, chain: String) {
         let tag = self.tag
         Logger.main.tag(tag).debug("add issuer form universal link with url: \(url) and nonce: \(nonce)")
 
@@ -323,7 +296,7 @@ class IssuerCollectionViewController: UICollectionViewController {
             
             self?.pendingNewManagedIssuer = ManagedIssuer()
             self?.pendingNewManagedIssuer!.delegate = self
-            self?.pendingNewManagedIssuer!.add(from: url, nonce: nonce, completion: { error in
+            self?.pendingNewManagedIssuer!.add(from: url, nonce: nonce, chain: chain, completion: { error in
                 guard error == nil else {
                     Logger.main.tag(tag).error("Error adding issuer \(error)")
                     self?.showAddIssuerError()

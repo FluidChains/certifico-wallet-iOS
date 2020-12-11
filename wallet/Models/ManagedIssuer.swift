@@ -9,6 +9,7 @@
 import Foundation
 import Blockcerts
 import WebKit
+import HDWalletKit
 
 enum InvalidIssuerReason {
     case missing, invalid
@@ -166,7 +167,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
     }
     
     // MARK: Add (Identify and introduce)
-    func add(from url: URL, nonce: String, completion: @escaping (ManagedIssuerError?) -> Void) {
+    func add(from url: URL, nonce: String, chain: String, completion: @escaping (ManagedIssuerError?) -> Void) {
         let tag = self.tag
         
         Logger.main.tag(tag).debug("add called with url: \(url)")
@@ -180,7 +181,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
                 return
             }
             
-            self?.introduce(nonce: nonce, completion: { introductionError in
+            self?.introduce(nonce: nonce, chain: chain, completion: { introductionError in
                 DispatchQueue.main.async {
                     if (introductionError != nil) {
                         Logger.main.tag(tag).error("introduction error in add")
@@ -334,7 +335,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
     */
     
     // MARK: Introduction step
-    func introduce(nonce: String, completion: @escaping (ManagedIssuerError?) -> Void) {
+    func introduce(nonce: String, chain: String, completion: @escaping (ManagedIssuerError?) -> Void) {
         let tag = self.tag
         
         Logger.main.tag(tag).debug("introduce call with nonce: \(nonce)")
@@ -344,12 +345,15 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
             return
         }
         
+        let chainSelected = networkSelector(chain: chain)
+        let publicKeyExtracted = Keychain.shared.nextPublicAddress(chain: chainSelected)
+        
         let recipient = Recipient(givenName: "",
                                   familyName: "",
                                   identity: "",
                                   identityType: "email",
                                   isHashed: false,
-                                  publicAddress: Keychain.shared.nextPublicAddress(),
+                                  publicAddress: publicKeyExtracted,
                                   revocationAddress: nil)
         
         self.nonce = nonce
@@ -420,6 +424,17 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
         Logger.main.tag(tag).info("abort_requests")
         inProgressRequest?.abort()
         dismissWebView()
+    }
+    
+    func networkSelector(chain: String) -> Coin {
+        switch chain {
+        case "EXOSNetwork":
+            return .exos
+        case "RUTAMainnet":
+            return .ruta
+        default:
+            return .exos
+        }
     }
 }
 

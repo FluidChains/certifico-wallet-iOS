@@ -29,6 +29,8 @@ class AddIssuerViewController: UIViewController, ManagedIssuerDelegate {
     @IBOutlet weak var nonceLabel: UILabel!
     @IBOutlet weak var nonceField : UITextView!
     @IBOutlet weak var submitButton : UIButton!
+    @IBOutlet weak var chainField: UITextView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +98,7 @@ class AddIssuerViewController: UIViewController, ManagedIssuerDelegate {
     
     func identifyAndIntroduceIssuer() {
         Logger.main.tag(tag).info("identify_and_introduce_user")
-        guard let urlString = issuerURLField.text, let url = URL(string: urlString), let nonce = nonceField.text else {
+        guard let urlString = issuerURLField.text, let url = URL(string: urlString), let nonce = nonceField.text, let chain = chainField.text else {
             Logger.main.tag(tag).error("url and one_time_code fields validation failed")
             return
         }
@@ -129,7 +131,7 @@ class AddIssuerViewController: UIViewController, ManagedIssuerDelegate {
             Logger.main.tag(self?.tag).info("creating managed_issuer")
             self?.managedIssuer = ManagedIssuer()
             self?.managedIssuer!.delegate = self
-            self?.managedIssuer!.add(from: url, nonce: nonce, completion: { error in
+            self?.managedIssuer!.add(from: url, nonce: nonce, chain: chain, completion: { error in
                 guard error == nil else {
                     Logger.main.tag(self?.tag).error("managed_issuer.add completion with error")
                     self?.showAddIssuerError()
