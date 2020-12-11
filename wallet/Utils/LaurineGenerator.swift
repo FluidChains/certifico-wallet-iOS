@@ -1099,7 +1099,7 @@ private extension NSMutableDictionary {
 
 
 private extension FileManager {
-    
+    /*
     func isDirectoryAtPath(path : String) -> Bool {
         
         let manager = FileManager.default
@@ -1113,7 +1113,7 @@ private extension FileManager {
         } catch _ {
             return false
         }
-    }
+    }*/
 }
 
 
