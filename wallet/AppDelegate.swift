@@ -8,10 +8,8 @@
 
 import UIKit
 import JSONLD
+import HDWalletKit
 
-#if DEBUG
-//import Bugsee
-#endif
 
 private let sampleCertificateResetKey = "resetSampleCertificate"
 private let enforceStrongOwnershipKey = "enforceStrongOwnership"
@@ -21,23 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let tag = String(describing: AppDelegate.self)
     
     static var instance = UIApplication.shared.delegate as! AppDelegate
-
+    
     var window: UIWindow?
-
+    
     // MARK: - UIApplicationDelegate
-
+    
     // The app has launched normally
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-       
-       
-        
         Logger.main.tag(tag).info("Application was launched!")
         InformationLogger.logInfo()
         
-        #if DEBUG
-  //      Bugsee.launch(token :"ef62e737-3645-43fa-ba0b-062afb7743af")
-        #endif
         
         let configuration = ArgumentParser().parse(arguments: ProcessInfo.processInfo.arguments)
         do {
@@ -47,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Attempted to launch from command line with unknown error: \(error)")
         }
-
+        
         Logger.main.tag(tag).debug("Managed issuers list url: \(Paths.managedIssuersListURL)")
         
         setupApplication()
@@ -57,15 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        
-        var options = ALOptions()
-        options.isSensorsEnabled = true
-        options.color = Style.Color.C3
-        AppLocker.present(with: .validate, and: options)
-    }
-        
-    
     // The app has launched from a universal link
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         Logger.main.tag(tag).info("Application was launched from a user activity.")
@@ -74,11 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupApplication()
         
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-            let url = userActivity.webpageURL {
+           let url = userActivity.webpageURL {
             Logger.main.tag(tag).info("launched with this url: \(url)")
             return importState(from: url)
         }
-
+        
         return true
     }
     
@@ -108,9 +90,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupApplication() {
         self.window?.addSubview(JSONLD.shared.webView)
-
+        
         UIApplication.shared.statusBarStyle = .lightContent
-
+        
         UserDefaults.standard.register(defaults: [
             sampleCertificateResetKey : false
         ])
@@ -136,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Logger.main.tag(tag).warning("Unable to load the sample certificate.")
             return
         }
-
+        
         _ = launchAddCertificate(at: sampleCertURL)
     }
     
@@ -148,7 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let issuerCollection = popToIssuerCollection()
         issuerCollection?.reloadCollectionView()
     }
-
+    
     
     func importState(from url: URL) -> Bool {
         Logger.main.tag(tag).debug("checking import state with url: \(url)")
@@ -158,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         Logger.main.tag(tag).debug("PathComponent: \(pathComponents)")
-                       
+        
         var commandName = pathComponents.removeFirst()
         
         if commandName == "/" && pathComponents.count >= 1 {
@@ -178,7 +160,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Logger.main.tag(tag).warning("false import")
                 return false
             }
-            let encodedCertificateURL = url.absoluteString;            Logger.main.tag(tag).debug("encoded certificate url: \(encodedCertificateURL)")
+            let encodedCertificateURL = url.absoluteString;
+            Logger.main.tag(tag).debug("encoded certificate url: \(encodedCertificateURL)")
             if let decodedCertificateString = encodedCertificateURL.removingPercentEncoding,
                 let certificateURL = URL(string: decodedCertificateString) {
                 Logger.main.tag(tag).debug("decoded certificate url: \(certificateURL)")
@@ -198,7 +181,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Logger.main.tag(tag).debug("false import")
                 return false
             }
-            
             let absoluteURL = pathComponents.removeFirst()
             var dividedURL = absoluteURL.components(separatedBy: "=")
             let encodedURL = dividedURL.removeLast()
@@ -209,51 +191,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let encodedOTC = dividedOTC.removeLast()
             Logger.main.tag(tag).debug("encoded nonce url: \(encodedOTC)")
             
+            let absoluteChain = pathComponents.removeFirst()
+            var divideChain = absoluteChain.components(separatedBy: "=")
+            let encodeChain = divideChain.removeLast()
+            Logger.main.tag(tag).debug("encoded chain: \(encodeChain)")
+            
             if let decodedIdentificationString = encodedURL.removingPercentEncoding,
-                let identificationURL = URL(string: decodedIdentificationString),
-                
-                let nonce = encodedOTC.removingPercentEncoding {
+               let identificationURL = URL(string: decodedIdentificationString),
+               let chain = encodeChain.removingPercentEncoding,
+               let nonce = encodedOTC.removingPercentEncoding {
                 Logger.main.tag(tag).debug("decoded identification url: \(identificationURL)")
                 Logger.main.tag(tag).debug("decoded nonce: \(nonce)")
                 
-            
-            launchAddIssuer(at: identificationURL, with: nonce)
+                launchAddIssuer(at: identificationURL, with: nonce, chain: chain)
                 return true
             } else {
                 Logger.main.tag(tag).warning("failed to decode url")
                 return false
             }
-
+            
         default:
             return false
         }
     }
     
-    func launchAddIssuer(at introductionURL: URL, with nonce: String) {
-        Logger.main.tag(tag).debug("launching add issuer with url: \(introductionURL) and nonce: \(nonce)")
+    func launchAddIssuer(at introductionURL: URL, with nonce: String, chain: String) {
+        Logger.main.tag(tag).debug("launching add issuer with chain: \(chain), url: \(introductionURL) and nonce: \(nonce)")
         let rootController = window?.rootViewController as? UINavigationController
         let issuerCollection = rootController?.viewControllers.first as? IssuerCollectionViewController
         
-        issuerCollection?.autocompleteRequest = .addIssuer(identificationURL: introductionURL, nonce: nonce)
+        issuerCollection?.autocompleteRequest = .addIssuer(identificationURL: introductionURL, nonce: nonce, chain: chain)
     }
     
     func launchAddCertificate(at url: URL, showCertificate: Bool = false, animated: Bool = true) {
         Logger.main.tag(tag).debug("launching add certificate with url: \(url)")
         let rootController = window?.rootViewController as? UINavigationController
         let issuerCollection = rootController?.viewControllers.first as? IssuerCollectionViewController
-
+        
         issuerCollection?.autocompleteRequest = .addCertificate(certificateURL: url, silently: !showCertificate, animated: animated)
     }
     
     func popToIssuerCollection() -> IssuerCollectionViewController? {
         let rootController = window?.rootViewController as? UINavigationController
-
+        
         rootController?.presentedViewController?.dismiss(animated: false, completion: nil)
         _ = rootController?.popToRootViewController(animated: false)
         
         return rootController?.viewControllers.first as? IssuerCollectionViewController
     }
-
+    
     func resetData() {
         // Delete all certificates
         do {
@@ -273,6 +259,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             
         }
-
+        
     }
 }
