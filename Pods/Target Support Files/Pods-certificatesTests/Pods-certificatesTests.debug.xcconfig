@@ -1,11 +1,13 @@
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CoreBitcoin" "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" "${PODS_ROOT}/Headers/Public/OpenSSL-Universal" "${PODS_ROOT}/Headers/Public/OpenSans" "${PODS_ROOT}/Headers/Public/Valet" "${PODS_ROOT}/Headers/Public/lottie-ios"
-OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/AppLocker/AppLocker.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Valet/Valet.modulemap"
-OTHER_LDFLAGS = $(inherited) -l"crypto" -l"ssl" -framework "CoreText" -framework "Foundation" -framework "Security" -framework "UIKit"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/AppLocker/AppLocker.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Valet/Valet.modulemap"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/OpenSans" "${PODS_ROOT}/Headers/Public/Valet" "${PODS_ROOT}/Headers/Public/lottie-ios" "${PODS_ROOT}/Headers/Public/secp256k1.swift"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/AppLocker/AppLocker.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/CryptoSwift/CryptoSwift.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/HDWalletKit/HDWalletKit.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Valet/Valet.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/Lottie/lottie-ios.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/OpenSans/OpenSans.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/secp256k1/secp256k1.swift.modulemap"
+OTHER_LDFLAGS = $(inherited) -framework "CoreText" -framework "Security" -framework "UIKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/AppLocker/AppLocker.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/CryptoSwift/CryptoSwift.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/HDWalletKit/HDWalletKit.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Valet/Valet.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/Lottie/lottie-ios.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/OpenSans/OpenSans.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/secp256k1/secp256k1.swift.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
-SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AppLocker" "${PODS_CONFIGURATION_BUILD_DIR}/Valet"
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AppLocker" "${PODS_CONFIGURATION_BUILD_DIR}/CryptoSwift" "${PODS_CONFIGURATION_BUILD_DIR}/HDWalletKit" "${PODS_CONFIGURATION_BUILD_DIR}/Valet"
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
