@@ -175,7 +175,7 @@ class SettingsTableViewController: UITableViewController {
         case 7:
             Logger.main.info("Backup and Restore")
             controller = nil
-            showBackupRestore()
+           // showBackupRestore()
         case 8:
             Logger.main.info("Change pin code")
             changePassCode()
