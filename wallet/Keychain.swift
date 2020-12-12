@@ -43,14 +43,14 @@ class Keychain {
         
         self.mnemonic = seedPhrase
         self.unusedKeyIndex = unusedKeyIndex
-       /* let words = seedPhrase.components(separatedBy: " ")
-        guard let mnemonic = BTCMnemonic(words: words, password: "", wordListType: .english) else {
-            fatalError("Can't start a Keychain with invalid phrase:\"\(seedPhrase)\"")
-        }
-        self.unusedKeyIndex = unusedKeyIndex
-        self.mnemonic = mnemonic
-        keychain = mnemonic.keychain
-        accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0") */
+        /* let words = seedPhrase.components(separatedBy: " ")
+         guard let mnemonic = BTCMnemonic(words: words, password: "", wordListType: .english) else {
+         fatalError("Can't start a Keychain with invalid phrase:\"\(seedPhrase)\"")
+         }
+         self.unusedKeyIndex = unusedKeyIndex
+         self.mnemonic = mnemonic
+         keychain = mnemonic.keychain
+         accountKeychain = keychain.derivedKeychain(withPath: "m/44'/248'/0'/0") */
     }
     
     func generateMnemonic() -> String {
@@ -66,10 +66,10 @@ class Keychain {
         
         return address
         
-       /* let key = accountKeychain.key(at: unusedKeyIndex)
-        unusedKeyIndex += 1
-        
-        return key?.address.string ?? ""*/
+        /* let key = accountKeychain.key(at: unusedKeyIndex)
+         unusedKeyIndex += 1
+         
+         return key?.address.string ?? ""*/
     }
     
     func generateWallet(chain: Coin) -> Wallet {
@@ -123,8 +123,8 @@ extension Keychain {
         let result = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
         
         guard result == noErr,
-            let dataType = dataTypeRef as? Data else {
-                return nil
+              let dataType = dataTypeRef as? Data else {
+            return nil
         }
         
         return String(data:dataType, encoding: .utf8)
@@ -158,6 +158,17 @@ extension Keychain {
     public static func hasPassphrase() -> Bool {
         return loadSeedPhrase() != nil
     }
+    
+    
+    public static func hasPassCode() -> Bool {
+        let passCode = try? AppLocker.valet.string(forKey: ALConstants.kPincode)
+        if (passCode != nil){
+            return true
+        } else {
+            return false
+        }
+    }
+    
     
     @discardableResult static func destroyShared() -> Bool {
         // Delete the seed phrase

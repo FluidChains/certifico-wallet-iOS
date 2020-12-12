@@ -64,6 +64,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
+    //AppLocker
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        Logger.main.info("Validating passcode")
+        var options = ALOptions()
+        options.isSensorsEnabled = true
+        options.color = Style.Color.C3
+        options.image = UIImage(named: "Logo")
+        if (Keychain.hasPassCode()) {
+            AppLocker.present(with: .validate, and: options)
+        } else {
+            AppLocker.present(with: .create, and: options)
+        }
+        
+    }
+    
+    
+    
     // The app is launching with a document
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         Logger.main.tag(tag).info("Application was launched with a document at \(url)")

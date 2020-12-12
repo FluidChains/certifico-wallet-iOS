@@ -91,7 +91,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="an8-p7-2zd"/>
-                        <color key="backgroundColor" red="0.060152135789394379" green="0.14074519276618958" blue="0.30589857697486877" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.34693980219999998" green="0.087883271279999994" blue="0.53782272340000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qKJ-hu-YmP" secondAttribute="trailing" id="BFh-mC-Y9j"/>
                             <constraint firstItem="uWO-Mc-lvh" firstAttribute="top" secondItem="58a-hx-ELF" secondAttribute="bottom" id="DpN-z0-Y8n"/>

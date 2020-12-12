@@ -73,6 +73,7 @@ public class AppLocker: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+
         // https://stackoverflow.com/questions/56459329/disable-the-interactive-dismissal-of-presented-view-controller-in-ios-13
         modalPresentationStyle = .fullScreen
     }
