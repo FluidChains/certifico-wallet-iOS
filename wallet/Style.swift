@@ -67,11 +67,11 @@ struct Style {
             
             switch weight {
             case .regular:
-                font = UIFont.openSansFont(ofSize: size)
+                font = UIFont(name: "Inter-Regular", size: size)!
             case .semiBold:
-                font = UIFont.openSansSemiBoldFont(ofSize: size)
+                font = UIFont(name: "Inter-SemiBold", size: size)!
             case .bold:
-                font = UIFont.openSansBoldFont(ofSize: size)
+                font = UIFont(name: "Inter-Bold", size: size)!
             }
             
             if isDynamic {

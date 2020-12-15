@@ -10,6 +10,10 @@
 		07676FCA248CB85B0003FD78 /* BackupRestoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07676FCC248CB85B0003FD78 /* BackupRestoreViewController.xib */; };
 		07676FCE248CC34B0003FD78 /* BackupRestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07676FCD248CC34B0003FD78 /* BackupRestoreViewController.swift */; };
 		076BFE8A2584991E00CA97CE /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0796B93424A5E55E002755B2 /* AppLocker.xib */; };
+		076BFE982588773700CA97CE /* inter_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE942588773700CA97CE /* inter_bold.ttf */; };
+		076BFE992588773700CA97CE /* inter_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE952588773700CA97CE /* inter_medium.ttf */; };
+		076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE962588773700CA97CE /* inter_reg.ttf */; };
+		076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE972588773700CA97CE /* inter_semibold.ttf */; };
 		0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93624A5E569002755B2 /* AppLocker.swift */; };
 		0796B93924A5E573002755B2 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93824A5E572002755B2 /* UI.swift */; };
 		07ACD00E25818AC3002A119C /* introduccion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 07ACD00B25818326002A119C /* introduccion.mp4 */; };
@@ -170,6 +174,10 @@
 /* Begin PBXFileReference section */
 		07676FCB248CB85B0003FD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BackupRestoreViewController.xib; sourceTree = "<group>"; };
 		07676FCD248CC34B0003FD78 /* BackupRestoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupRestoreViewController.swift; sourceTree = "<group>"; };
+		076BFE942588773700CA97CE /* inter_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_bold.ttf; sourceTree = "<group>"; };
+		076BFE952588773700CA97CE /* inter_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_medium.ttf; sourceTree = "<group>"; };
+		076BFE962588773700CA97CE /* inter_reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_reg.ttf; sourceTree = "<group>"; };
+		076BFE972588773700CA97CE /* inter_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_semibold.ttf; sourceTree = "<group>"; };
 		0796B93424A5E55E002755B2 /* AppLocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLocker.xib; sourceTree = "<group>"; };
 		0796B93624A5E569002755B2 /* AppLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
 		0796B93824A5E572002755B2 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -336,6 +344,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076BFE93258876FF00CA97CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				076BFE942588773700CA97CE /* inter_bold.ttf */,
+				076BFE952588773700CA97CE /* inter_medium.ttf */,
+				076BFE962588773700CA97CE /* inter_reg.ttf */,
+				076BFE972588773700CA97CE /* inter_semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4495AC1F1B9EBD3AE7518B81 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +527,7 @@
 		836031C11E5E5064005B2D2E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				076BFE93258876FF00CA97CE /* Fonts */,
 				836031C21E5E5064005B2D2E /* SampleCertificate.json */,
 			);
 			name = Assets;
@@ -748,6 +768,8 @@
 			files = (
 				07ACD00E25818AC3002A119C /* introduccion.mp4 in Resources */,
 				A93C04022037760D0021B9D1 /* IssuerEmptyTableViewCell.xib in Resources */,
+				076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */,
+				076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */,
 				A970D00A2044AFC6004BC1AE /* introduction.mp4 in Resources */,
 				EE821EC8215C100000713C47 /* verifier.js in Resources */,
 				838DC1391E43F0D300533AEB /* AddIssuerViewController.xib in Resources */,
@@ -756,6 +778,7 @@
 				83111B321DA4110C006B058D /* LaunchScreen.storyboard in Resources */,
 				8329A0531DDA825200863285 /* IssuerSummaryTableViewCell.xib in Resources */,
 				83111B2F1DA4110C006B058D /* Assets.xcassets in Resources */,
+				076BFE982588773700CA97CE /* inter_bold.ttf in Resources */,
 				EEAF835B21471542008EC1FA /* Localizable.strings in Resources */,
 				A9B997A62040611D00C05153 /* IssuerCollectionReturningUserEmptyView.xib in Resources */,
 				A9B178492036145900B76375 /* IssuerHeaderTableViewCell.xib in Resources */,
@@ -777,6 +800,7 @@
 				A9B997A2203F1CE000C05153 /* verify.html in Resources */,
 				836031C31E5E5064005B2D2E /* SampleCertificate.json in Resources */,
 				EE8DD6AB2148705500795B0D /* CertificateVerificationViewController.xib in Resources */,
+				076BFE992588773700CA97CE /* inter_medium.ttf in Resources */,
 				076BFE8A2584991E00CA97CE /* AppLocker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
