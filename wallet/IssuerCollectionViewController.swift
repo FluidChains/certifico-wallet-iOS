@@ -48,7 +48,6 @@ class IssuerCollectionViewController: UICollectionViewController {
         
         Logger.main.tag(tag).info("view_did_load")
         
-        validatePassCode()
         
         title = Localizations.BlockcertsWallet
         
@@ -79,6 +78,8 @@ class IssuerCollectionViewController: UICollectionViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         loadOnboardingIfNeeded()
+        validatePassCode()
+
     }
     
     func validatePassCode() {
