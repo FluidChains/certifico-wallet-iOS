@@ -13,7 +13,11 @@ class Indicator: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         drawCircle(rect)
+        layer.cornerRadius = rect.width / 2
+        layer.masksToBounds = true
+        
     }
+    
 }
 
 class PinIndicator: UIButton {
@@ -42,6 +46,7 @@ extension UIView {
         context.setStrokeColor(UIColor.lightGray.cgColor)
         context.strokeEllipse(in: rect)
     }
+    
     
     func shake(delegate: CAAnimationDelegate) {
         let animationKeyPath = "transform.translation.x"
