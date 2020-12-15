@@ -114,7 +114,7 @@ class SettingsTableViewController: UITableViewController {
         case 7:
             text = Localizations.BackupRestore
         case 8:
-            text = "Change Pin Code"
+            text = Localizations.ChangePin
         case 9:
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
             let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String

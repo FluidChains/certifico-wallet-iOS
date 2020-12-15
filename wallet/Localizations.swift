@@ -480,5 +480,7 @@ public struct Localizations {
 
     /// Base translation: An issuer was added. Please check your issuers screen.
     public static var AddIssuerSuccess : String = NSLocalizedString("AddIssuerSuccess", comment: "")
+    
+    public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
 
 }
