@@ -246,7 +246,7 @@ class AlertViewController : UIViewController {
         let okayButton = PrimaryButton(frame: .zero)
         okayButton.setTitle(Localizations.Okay, for: .normal)
         okayButton.onTouchUpInside {
-            let url = URL(string: "itms://itunes.apple.com/us/app/blockcerts-wallet/id1146921514")!
+            let url = URL(string: "itms://itunes.apple.com/us/app/certifico/id1543769590")!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             vc.dismiss(animated: false, completion: nil)
         }

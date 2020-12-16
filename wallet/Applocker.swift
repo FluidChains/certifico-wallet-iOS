@@ -13,7 +13,7 @@ import Valet
 
 public enum ALConstants {
     static let nibName = "AppLocker"
-    static let kPincode = "com.fluidchains.fluidcerts.pincode" // Key for saving pincode to keychain
+    static let kPincode = "io.certifico.pincode" // Key for saving pincode to keychain
     static let kLocalizedReason = "Unlock with sensor" // Your message when sensors must be shown
     static let duration = 0.3 // Duration of indicator filling
     static let maxPinLength = 4
