@@ -89,7 +89,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isDebugBuild ? 15 : 10
+        return isDebugBuild ? 15 : 9
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,23 +104,21 @@ class SettingsTableViewController: UITableViewController {
         case 2:
             text = Localizations.MyPassphrase
         case 3:
-            text = Localizations.AboutPassphrases
-        case 4:
-            text = Localizations.PrivacyPolicy
-        case 5:
-            text = Localizations.LearnMore
-        case 6:
             text = Localizations.EmailLogs
-        case 7:
-            text = Localizations.BackupRestore
-        case 8:
+        case 4:
             text = Localizations.ChangePin
-        case 9:
-            let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-            text = "Version: \(version) Build: \(build)"
+        case 5:
+            text = Localizations.PrivacyPolicy
+        case 6:
+            text = Localizations.LearnMore
+        case 7:
+            text = Localizations.AboutPassphrases
+        case 8:
+            text = Localizations.AboutCertifico
             
         // The following are only visible in DEBUG builds
+        case 9:
+            text = Localizations.BackupRestore
         case 10:
             text = "[DEBUG] Destroy passphrase & crash"
         case 11:
@@ -159,31 +157,31 @@ class SettingsTableViewController: UITableViewController {
             authenticate()
             controller = nil
         case 3:
-            Logger.main.info("About passphrase tapped in settings")
-            controller = AboutPassphraseViewController()
-        case 4:
-            Logger.main.info("Privacy statement tapped in settings")
-            controller = PrivacyViewController()
-        case 5:
-            Logger.main.info("Learn more")
-             controller = LearnMoreViewController()
-            
-        case 6:
             Logger.main.info("Share device logs")
             controller = nil
             shareLogs()
-        case 7:
-            Logger.main.info("Backup and Restore")
-            controller = nil
-           // showBackupRestore()
-        case 8:
+        case 4:
             Logger.main.info("Change pin code")
             changePassCode()
-        case 9:
-            Logger.main.info("Version")
+        case 5:
+            Logger.main.info("Privacy statement tapped in settings")
+            controller = PrivacyViewController()
+        case 6:
+            Logger.main.info("Learn more")
+             controller = LearnMoreViewController()
+        case 7:
+            Logger.main.info("About passphrase tapped in settings")
+            controller = AboutPassphraseViewController()
+        case 8:
+            Logger.main.info("About Certifico")
+            controller = AboutCertifico()
             self.deselectRow()
             
         // The following are only visible in DEBUG builds
+        case 9:
+            Logger.main.info("Backup and Restore")
+            controller = nil
+           // showBackupRestore()
         case 10:
             Logger.main.info("Destroy passphrase & crash...")
             configuration = AppConfiguration(shouldDeletePassphrase: true, shouldResetAfterConfiguring: true)

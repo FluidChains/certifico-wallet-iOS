@@ -482,5 +482,9 @@ public struct Localizations {
     public static var AddIssuerSuccess : String = NSLocalizedString("AddIssuerSuccess", comment: "")
     
     public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
+    
+    public static var AboutCertifico : String = NSLocalizedString("AboutCertifico", comment: "")
+    
+    public static var ContactInfo : String = NSLocalizedString("ContactInfo", comment: "")
 
 }

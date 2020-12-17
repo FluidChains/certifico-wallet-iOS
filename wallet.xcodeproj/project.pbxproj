@@ -14,6 +14,8 @@
 		076BFE992588773700CA97CE /* inter_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE952588773700CA97CE /* inter_medium.ttf */; };
 		076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE962588773700CA97CE /* inter_reg.ttf */; };
 		076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE972588773700CA97CE /* inter_semibold.ttf */; };
+		076BFEB0258B392900CA97CE /* AboutCertifico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BFEAE258B392900CA97CE /* AboutCertifico.swift */; };
+		076BFEB1258B392900CA97CE /* AboutCertifico.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076BFEAF258B392900CA97CE /* AboutCertifico.xib */; };
 		0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93624A5E569002755B2 /* AppLocker.swift */; };
 		0796B93924A5E573002755B2 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93824A5E572002755B2 /* UI.swift */; };
 		07ACD00E25818AC3002A119C /* introduccion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 07ACD00B25818326002A119C /* introduccion.mp4 */; };
@@ -178,6 +180,8 @@
 		076BFE952588773700CA97CE /* inter_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_medium.ttf; sourceTree = "<group>"; };
 		076BFE962588773700CA97CE /* inter_reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_reg.ttf; sourceTree = "<group>"; };
 		076BFE972588773700CA97CE /* inter_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_semibold.ttf; sourceTree = "<group>"; };
+		076BFEAE258B392900CA97CE /* AboutCertifico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutCertifico.swift; path = wallet/AboutCertifico.swift; sourceTree = "<group>"; };
+		076BFEAF258B392900CA97CE /* AboutCertifico.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutCertifico.xib; path = wallet/AboutCertifico.xib; sourceTree = "<group>"; };
 		0796B93424A5E55E002755B2 /* AppLocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLocker.xib; sourceTree = "<group>"; };
 		0796B93624A5E569002755B2 /* AppLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
 		0796B93824A5E572002755B2 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 		83111B1B1DA4110C006B058D = {
 			isa = PBXGroup;
 			children = (
+				076BFEAE258B392900CA97CE /* AboutCertifico.swift */,
+				076BFEAF258B392900CA97CE /* AboutCertifico.xib */,
 				EEAF834D21470884008EC1FA /* Localizations.swift */,
 				836031C41E5E513A005B2D2E /* Settings.bundle */,
 				836031C11E5E5064005B2D2E /* Assets */,
@@ -771,6 +777,7 @@
 				076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */,
 				076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */,
 				A970D00A2044AFC6004BC1AE /* introduction.mp4 in Resources */,
+				076BFEB1258B392900CA97CE /* AboutCertifico.xib in Resources */,
 				EE821EC8215C100000713C47 /* verifier.js in Resources */,
 				838DC1391E43F0D300533AEB /* AddIssuerViewController.xib in Resources */,
 				A909528220449DD000F29CF5 /* C5T2BLabelCell.xib in Resources */,
@@ -986,6 +993,7 @@
 				838DE6D81F3B680800185A49 /* Extensions.swift in Sources */,
 				83FF5DEA1ECBAC7A0063397C /* CertificateView.swift in Sources */,
 				A927355A2031E1C9002361FD /* AlertViewController.swift in Sources */,
+				076BFEB0258B392900CA97CE /* AboutCertifico.swift in Sources */,
 				838DE6E01F3B6D5D00185A49 /* ManagedIssuerManager.swift in Sources */,
 				4ED0B2DF3AD647A603154AA6 /* InformationLogger.swift in Sources */,
 				0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */,
