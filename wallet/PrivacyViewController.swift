@@ -30,15 +30,15 @@ class PrivacyViewController: UIViewController {
         
         switch locale {
         case "es":
-            privacyURL = URL(string: "https://certifico.io/es/mobile-privacy")!
+            privacyURL = URL(string: "https://sun.certifico.io/es/mobile-privacy/mobile-es.html")!
         case "mt":
-            privacyURL = URL(string: "https://certifico.io/mt/mobile-privacy")!
+            privacyURL = URL(string: "https://sun.certifico.io/mt/mobile-privacy/mobile-mt.html")!
         case "it":
-            privacyURL = URL(string: "https://certifico.io/it/mobile-privacy")!
+            privacyURL = URL(string: "https://sun.certifico.io/it/mobile-privacy/mobile-it.html")!
         case "ja":
-            privacyURL = URL(string: "https://certifico.io/ja/mobile-privacy")!
+            privacyURL = URL(string: "https://sun.certifico.io/mobile.html")!
         default:
-            privacyURL = URL(string: "https://certifico.io/mobile-privacy")!
+            privacyURL = URL(string: "https://sun.certifico.io/mobile.html")!
         }
         
         let request = URLRequest(url: privacyURL)
@@ -68,15 +68,15 @@ class AboutPassphraseViewController: UIViewController {
         
         switch locale {
         case "es":
-            url = URL(string: "https://certifico.io/es/about-passphrase")!
+            url = URL(string: "https://sun.certifico.io/es/about-passphrase/passphrase-es.html")!
         case "mt":
-            url = URL(string: "https://certifico.io/mt/about-passphrase")!
+            url = URL(string: "https://sun.certifico.io/mt/about-passphrase/passphrase-mt.html")!
         case "it":
-            url = URL(string: "https://certifico.io/it/about-passphrase")!
+            url = URL(string: "https://sun.certifico.io/it/about-passphrase/passphrase-it.html")!
         case "ja":
-            url = URL(string: "https://certifico.io/ja/about-passphrase")!
+            url = URL(string: "https://sun.certifico.io/mobile.html")!
         default:
-            url = URL(string: "https://certifico.io/about-passphrase")!
+            url = URL(string: "https://sun.certifico.io/passphrase.html")!
         }
         
         let request = URLRequest(url: url)
