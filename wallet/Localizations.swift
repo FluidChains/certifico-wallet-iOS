@@ -231,6 +231,9 @@ public struct Localizations {
     /// Base translation: Credential URL
     public static var CredentialURL : String = NSLocalizedString("CredentialURL", comment: "")
 
+    /// Base translation: Change Pin Code
+    public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
+
     /// Base translation: Please check it and try again.
     public static var CheckPassphraseTryAgain : String = NSLocalizedString("CheckPassphraseTryAgain", comment: "")
 
@@ -395,6 +398,9 @@ public struct Localizations {
     /// Base translation: Credential Info
     public static var CredentialInfo : String = NSLocalizedString("CredentialInfo", comment: "")
 
+    /// Base translation: About Certifico
+    public static var AboutCertifico : String = NSLocalizedString("AboutCertifico", comment: "")
+
     /// Base translation: Please select at least one option below:
     public static var SelectOne : String = NSLocalizedString("SelectOne", comment: "")
 
@@ -410,7 +416,7 @@ public struct Localizations {
     /// Base translation: Issuer Name
     public static var IssuerName : String = NSLocalizedString("IssuerName", comment: "")
 
-    /// Base translation: Verified!
+    /// Base translation: Blockchain Verified!
     public static var Verified : String = NSLocalizedString("Verified", comment: "")
 
     /// Base translation: Authenticate to replace your secure passphrase.
@@ -448,6 +454,9 @@ public struct Localizations {
     /// Base translation: Couldn't share certificate.
     public static var ShareCredentialError : String = NSLocalizedString("ShareCredentialError", comment: "")
 
+    /// Base translation: Contact Info:
+    public static var ContactInfo : String = NSLocalizedString("ContactInfo", comment: "")
+
     /// Base translation: This is a sample certificate that cannot be verified. Real certificates will perform a live validation process.
     public static var SampleCredentialVerificationImpossible : String = NSLocalizedString("SampleCredentialVerificationImpossible", comment: "")
 
@@ -480,11 +489,5 @@ public struct Localizations {
 
     /// Base translation: An issuer was added. Please check your issuers screen.
     public static var AddIssuerSuccess : String = NSLocalizedString("AddIssuerSuccess", comment: "")
-    
-    public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
-    
-    public static var AboutCertifico : String = NSLocalizedString("AboutCertifico", comment: "")
-    
-    public static var ContactInfo : String = NSLocalizedString("ContactInfo", comment: "")
 
 }
