@@ -7,6 +7,8 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:me.certifico.io</string>
+		<string>applinks:me-dev.certifico.io</string>
+		<string>applinks:mars.certifico.io</string>
 	</array>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
