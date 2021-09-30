@@ -338,15 +338,27 @@ class IssuerMetadataViewController : BaseMetadataViewController {
         if let name = issuer.issuer?.name {
             data.append(InfoCell(title: Localizations.IssuerName, detail: name, url: nil))
         }
-        if let introducedOn = issuer.introducedOn {
-            data.append(InfoCell(title: Localizations.IntroducedOn, detail: dateFormatter.string(from: introducedOn), url: nil))
+        
+        if let chain = issuer.chain {
+            data.append(InfoCell(title: "Chain", detail: chain, url: nil))
         }
-        if let address = issuer.introducedWithAddress {
-            data.append(InfoCell(title: Localizations.SharedAddress, detail: address.scopedValue, url: nil))
-        }
+        
         if let email = issuer.issuer?.email {
             data.append(InfoCell(title: Localizations.IssuerContactEmail, detail: email, url: URL(string: "mailto:\(email)")))
         }
+        
+        if let introducedOn = issuer.introducedOn {
+            data.append(InfoCell(title: Localizations.IntroducedOn, detail: dateFormatter.string(from: introducedOn), url: nil))
+        }
+        
+        if let address = issuer.introducedWithAddress {
+            data.append(InfoCell(title: Localizations.SharedAddress, detail: address.scopedValue, url: nil))
+        }
+        
+        if let urlIssuer = issuer.issuer?.id {
+            data.append(InfoCell(title: "URL", detail: urlIssuer.absoluteString, url: URL(string: urlIssuer.absoluteString)))
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
