@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddIssuerViewController" customModule="Certifico" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddIssuerViewController" customModule="Chertero" customModuleProvider="target">
             <connections>
                 <outlet property="issuerURLContainer" destination="D5D-Ee-p9l" id="qa9-wU-p3y"/>
                 <outlet property="issuerURLField" destination="zSZ-UY-k6C" id="BMf-Bh-qTk"/>
@@ -35,13 +35,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kaw-NP-DqR" userLabel="Content">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5D-Ee-p9l" userLabel="Issuer Container">
-                                    <rect key="frame" x="20" y="20" width="335" height="135.5"/>
+                                    <rect key="frame" x="20" y="20" width="335" height="132"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Add the URL given by your issuer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVg-Ue-m8l" customClass="LabelC5T2B" customModule="Certifico" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Add the URL given by your issuer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVg-Ue-m8l" customClass="LabelC5T2B" customModule="Chertero" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zSZ-UY-k6C" userLabel="Issuer URL Text Field">
-                                            <rect key="frame" x="0.0" y="35.5" width="335" height="100"/>
+                                            <rect key="frame" x="0.0" y="32" width="335" height="100"/>
                                             <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="Mlz-6M-8dk"/>
@@ -76,10 +76,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXf-GP-Ook" userLabel="Nonce Container">
-                                    <rect key="frame" x="20" y="179.5" width="335" height="99.5"/>
+                                    <rect key="frame" x="20" y="176" width="335" height="96"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yob-Sd-s4n" userLabel="Nonce Text View">
-                                            <rect key="frame" x="0.0" y="35.5" width="335" height="64"/>
+                                            <rect key="frame" x="0.0" y="32" width="335" height="64"/>
                                             <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64" id="KgH-hu-ZET"/>
@@ -92,8 +92,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Add your one-time code" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-iU-XOc" customClass="LabelC5T2B" customModule="Certifico" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Add your one-time code" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-iU-XOc" customClass="LabelC5T2B" customModule="Chertero" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -113,8 +113,8 @@
                                         <constraint firstAttribute="bottom" secondItem="Yob-Sd-s4n" secondAttribute="bottom" id="wFl-NS-S9h"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-OO-122" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="303" width="335" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-OO-122" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="296" width="335" height="52"/>
                                     <state key="normal" title="_Add an Issuer"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="AddIssuer"/>
@@ -160,13 +160,13 @@
     </objects>
     <designables>
         <designable name="SVg-Ue-m8l">
-            <size key="intrinsicContentSize" width="249" height="19.5"/>
+            <size key="intrinsicContentSize" width="94" height="16"/>
         </designable>
         <designable name="YfE-OO-122">
-            <size key="intrinsicContentSize" width="102" height="30"/>
+            <size key="intrinsicContentSize" width="69" height="30"/>
         </designable>
         <designable name="krB-iU-XOc">
-            <size key="intrinsicContentSize" width="184.5" height="19.5"/>
+            <size key="intrinsicContentSize" width="101" height="16"/>
         </designable>
     </designables>
 </document>

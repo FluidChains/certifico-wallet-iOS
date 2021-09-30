@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKt-0J-INy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKt-0J-INy">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JHV-Fb-ny0">
             <objects>
-                <navigationController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKt-0J-INy" customClass="NavigationController" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKt-0J-INy" customClass="NavigationController" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QbR-4T-K5s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -40,13 +40,13 @@
         <!--Landing Screen View Controller-->
         <scene sceneID="i6h-4D-YvS">
             <objects>
-                <viewController id="C6e-aU-jG4" customClass="LandingScreenViewController" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C6e-aU-jG4" customClass="LandingScreenViewController" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5m7-RT-iLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Mc-lvh" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                <rect key="frame" x="20" y="644" width="374" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Mc-lvh" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                <rect key="frame" x="20" y="604" width="374" height="52"/>
                                 <state key="normal" title="_New User"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="NewUser"/>
@@ -55,8 +55,8 @@
                                     <segue destination="T7K-XY-0w3" kind="show" id="M7C-el-hH1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="89" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-hu-YmP" customClass="HomeSecondaryButton" customModule="Certifico" customModuleProvider="target">
-                                <rect key="frame" x="20" y="686" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="89" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-hu-YmP" customClass="HomeSecondaryButton" customModule="Chertero" customModuleProvider="target">
+                                <rect key="frame" x="20" y="664" width="374" height="52"/>
                                 <state key="normal" title="_Current User"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CurrentUser"/>
@@ -69,10 +69,10 @@
                                 <rect key="frame" x="82" y="0.0" width="250" height="52"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58a-hx-ELF">
-                                <rect key="frame" x="0.0" y="52" width="414" height="592"/>
+                                <rect key="frame" x="0.0" y="52" width="414" height="552"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-1p-Syt" userLabel="Play button">
-                                        <rect key="frame" x="147" y="236" width="120" height="120"/>
+                                        <rect key="frame" x="147" y="216" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="fsO-cp-LR3"/>
                                             <constraint firstAttribute="height" constant="120" id="kRU-Gt-UT1"/>
@@ -118,7 +118,7 @@
         <!--Welcome Returning Users View Controller-->
         <scene sceneID="a3e-su-2Kq">
             <objects>
-                <viewController storyboardIdentifier="WelcomeReturningUsers" id="g39-vY-4w6" customClass="WelcomeReturningUsersViewController" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeReturningUsers" id="g39-vY-4w6" customClass="WelcomeReturningUsersViewController" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="viy-wW-g0f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-ki-NCg" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="553.66666666666663"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="490.33333333333331"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="returning_video_background" translatesAutoresizingMaskIntoConstraints="NO" id="CWt-dI-oKE">
                                                 <rect key="frame" x="-20" y="0.0" width="414" height="233"/>
@@ -146,8 +146,8 @@
                                                     <action selector="playWelcomeVideo" destination="g39-vY-4w6" eventType="touchUpInside" id="QBd-wQ-3rv"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_We've improved the experience, but you'll be able to receive and manage your credentials as before." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Iu-wjr" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="281.33333333333331" width="334" height="61"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_We've improved the experience, but you'll be able to receive and manage your credentials as before." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Iu-wjr" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="281.33333333333331" width="334" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -155,8 +155,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please note that you are now required to back up your passphrase, but you can do so easily in the app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McB-xV-fyP" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="366.33333333333331" width="334" height="61"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please note that you are now required to back up your passphrase, but you can do so easily in the app!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McB-xV-fyP" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="325.66666666666669" width="334" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -164,8 +164,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody2"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Tap continue to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ0-U4-Kxs" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="451.33333333333331" width="334" height="20.333333333333314"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Tap continue to begin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ0-U4-Kxs" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="370" width="334" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -173,8 +173,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="UpdateUserBody3"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-78-xzB" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="495.66666666666674" width="334" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-78-xzB" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="414.33333333333331" width="334" height="52"/>
                                                 <state key="normal" title="_Continue"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Continue"/>
@@ -183,7 +183,7 @@
                                                     <segue destination="i5s-AP-Aeo" kind="show" id="aCt-1w-xH5"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Fluidcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Welcome to the new Fluidcerts Wallet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-fT-lMh" customClass="LabelC3T5S" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="249.00000000000003" width="334" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -252,7 +252,7 @@
         <!--Onboarding Current User-->
         <scene sceneID="0Aa-Fw-X41">
             <objects>
-                <viewController id="BDX-GA-efs" customClass="OnboardingCurrentUser" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BDX-GA-efs" customClass="OnboardingCurrentUser" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkj-ps-MRg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,9 +261,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-ws-ppc" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="295.33333333333331"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="313.33333333333331"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Enter your passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-ac-PeD" customClass="LabelC3T5S" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Enter your passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-ac-PeD" customClass="LabelC3T5S" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="16" width="374" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -272,7 +272,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="EnterPassphrase"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please type or paste your passphrase here:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-Qr-aZc" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please type or paste your passphrase here:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-Qr-aZc" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="49" width="374" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -295,8 +295,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkJ-EG-3bX" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="245.33333333333337" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkJ-EG-3bX" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="245.33333333333337" width="374" height="52"/>
                                                 <state key="normal" title="_Enter"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Enter"/>
@@ -355,7 +355,7 @@
         <!--New User-->
         <scene sceneID="35f-qu-Nzo">
             <objects>
-                <viewController title="New User" id="T7K-XY-0w3" customClass="NewUserViewController" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New User" id="T7K-XY-0w3" customClass="NewUserViewController" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxu-0f-vEN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,9 +364,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyP-ht-mHB" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="441.66666666666669"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="419"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase Generated!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-Bm-Iw4" customClass="LabelC3T5S" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase Generated!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-Bm-Iw4" customClass="LabelC3T5S" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="137" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -375,8 +375,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="PassphraseGenerated"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_There's a backup on this phone. You must create an extra backup in case you lose or switch devices." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-c0-sOB" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="169.33333333333334" width="374" height="61"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_There's a backup on this phone. You must create an extra backup in case you lose or switch devices." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6G-c0-sOB" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="169.33333333333334" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -384,8 +384,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="PassphraseDescription"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-Yg-UUa" customClass="LabelC3T3B" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="254.33333333333334" width="374" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-Yg-UUa" customClass="LabelC3T3B" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="213.66666666666669" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -394,9 +394,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPd-ZI-ehX" userLabel="Passphrase container">
-                                                <rect key="frame" x="0.0" y="282.66666666666669" width="374" height="85"/>
+                                                <rect key="frame" x="0.0" y="242" width="374" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-eb-6Ul" customClass="LabelC3T3S" customModule="Certifico" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-eb-6Ul" customClass="LabelC3T3S" customModule="Chertero" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="12" width="342" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -416,8 +416,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-4S-zBG" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="391.66666666666669" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEY-4S-zBG" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="351" width="374" height="52"/>
                                                 <state key="normal" title="_Create a Backup"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CreateBackup"/>
@@ -488,7 +488,7 @@
         <!--Onboarding Backup Methods-->
         <scene sceneID="HDx-wo-1Xq">
             <objects>
-                <viewController id="i5s-AP-Aeo" customClass="OnboardingBackupMethods" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i5s-AP-Aeo" customClass="OnboardingBackupMethods" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJM-tU-YMm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,7 +502,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illo_backup" translatesAutoresizingMaskIntoConstraints="NO" id="P5q-5d-qXN">
                                                 <rect key="frame" x="129" y="16" width="116" height="105"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Select Backup Methods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-qm-tMU" customClass="LabelC3T5S" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Select Backup Methods" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRC-qm-tMU" customClass="LabelC3T5S" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="137" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -511,7 +511,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="SelectBackupMethods"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please select at least one option from the choices below:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-WK-gg0" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Please select at least one option from the choices below:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-WK-gg0" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="169.33333333333334" width="374" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -520,7 +520,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="SelectOne"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFl-gf-qas" customClass="CheckmarkButton" customModule="Certifico" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFl-gf-qas" customClass="CheckmarkButton" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="234" width="374" height="34"/>
                                                 <state key="normal" title="_Manual Hardcopy"/>
                                                 <userDefinedRuntimeAttributes>
@@ -530,7 +530,7 @@
                                                     <action selector="backupManual" destination="i5s-AP-Aeo" eventType="touchUpInside" id="4wc-0w-PN3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Ah-B2Q" customClass="CheckmarkButton" customModule="Certifico" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGc-Ah-B2Q" customClass="CheckmarkButton" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="276" width="374" height="34"/>
                                                 <state key="normal" title="_Copy to E-mail or Clipboard"/>
                                                 <userDefinedRuntimeAttributes>
@@ -540,7 +540,7 @@
                                                     <action selector="backupCopy" destination="i5s-AP-Aeo" eventType="touchUpInside" id="LkO-Nw-57D"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-IF-EY4" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-IF-EY4" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="334" width="374" height="34"/>
                                                 <state key="normal" title="_Select At Least One to Continue"/>
                                                 <userDefinedRuntimeAttributes>
@@ -609,7 +609,7 @@
         <!--Manual Backup-->
         <scene sceneID="Hgm-kK-cQi">
             <objects>
-                <viewController storyboardIdentifier="manualBackup" title="Manual Backup" id="CdH-oJ-v0k" customClass="OnboardingManualBackup" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="manualBackup" title="Manual Backup" id="CdH-oJ-v0k" customClass="OnboardingManualBackup" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9pM-qE-SXt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -618,7 +618,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MI6-7Y-4vX" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="364.66666666666669"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="362.33333333333331"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illo_writtenbackup" translatesAutoresizingMaskIntoConstraints="NO" id="j3U-2e-aVj">
                                                 <rect key="frame" x="134.66666666666666" y="16.000000000000007" width="104.66666666666666" height="104.66666666666669"/>
@@ -626,7 +626,7 @@
                                                     <constraint firstAttribute="width" secondItem="j3U-2e-aVj" secondAttribute="height" multiplier="1:1" id="dQJ-VD-IHL"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Manual Hardcopy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-wT-KoM" customClass="LabelC3T5S" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Manual Hardcopy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-wT-KoM" customClass="LabelC3T5S" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="136.66666666666666" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -635,8 +635,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="ManualHardCopy"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Write your passphrase by hand on a piece of paper and store it in a secure location." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-p9-n0G" customClass="LabelC6T3R" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="169" width="374" height="40.666666666666657"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Write your passphrase by hand on a piece of paper and store it in a secure location." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-p9-n0G" customClass="LabelC6T3R" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="169" width="374" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -645,9 +645,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlN-eo-GeR" userLabel="Passphrase container">
-                                                <rect key="frame" x="0.0" y="221.66666666666663" width="374" height="85"/>
+                                                <rect key="frame" x="0.0" y="201.33333333333334" width="374" height="85.000000000000028"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-he-eXT" customClass="LabelC1T4S" customModule="Certifico" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sq-he-eXT" customClass="LabelC1T4S" customModule="Chertero" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="12" width="342" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -667,8 +667,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-LW-82b" customClass="PrimaryButton" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="330.66666666666669" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-LW-82b" customClass="PrimaryButton" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="310.33333333333331" width="374" height="52"/>
                                                 <state key="normal" title="_Done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="Done"/>
@@ -730,7 +730,7 @@
         <!--My Passphrase-->
         <scene sceneID="oLD-cs-gSj">
             <objects>
-                <viewController storyboardIdentifier="MyPassphrase" title="My Passphrase" id="hEE-aO-pVh" customClass="MyPassphraseViewController" customModule="Certifico" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPassphrase" title="My Passphrase" id="hEE-aO-pVh" customClass="MyPassphraseViewController" customModule="Chertero" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNm-qL-fPo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -739,12 +739,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxr-dN-nYu" userLabel="Container">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="203.33333333333334"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="221.33333333333334"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Y-qF-nOc" userLabel="Passphrase container">
                                                 <rect key="frame" x="0.0" y="56.333333333333343" width="374" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-az-KD6" customClass="LabelC1T4S" customModule="Certifico" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pass phrase generate electricity dynamo femur shake fries joystick corgi jingle wall sticker sandwich soup pencil coffee" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-az-KD6" customClass="LabelC1T4S" customModule="Chertero" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="11.999999999999993" width="342" height="61.000000000000007"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -764,8 +764,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-rK-XlR" customClass="SecondaryButton" customModule="Certifico" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="165.33333333333334" width="374" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-rK-XlR" customClass="SecondaryButton" customModule="Chertero" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="165.33333333333334" width="374" height="52"/>
                                                 <state key="normal" title="_Copy to E-mail or Clipboard"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="LocalizedText" value="CopyEmailClipboard"/>
@@ -775,7 +775,7 @@
                                                     <action selector="backupCopy" destination="i5s-AP-Aeo" eventType="touchUpInside" id="r2B-id-lO6"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_My Passphrase" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-At-8Ka" customClass="LabelC5T2B" customModule="Certifico" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_My Passphrase" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHu-At-8Ka" customClass="LabelC5T2B" customModule="Chertero" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24" width="374" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -831,61 +831,61 @@
     </scenes>
     <designables>
         <designable name="4vj-p9-n0G">
-            <size key="intrinsicContentSize" width="640" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="161.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="5Sq-he-eXT">
             <size key="intrinsicContentSize" width="902.66666666666663" height="20.333333333333332"/>
         </designable>
         <designable name="8iX-rK-XlR">
-            <size key="intrinsicContentSize" width="231" height="34"/>
+            <size key="intrinsicContentSize" width="138" height="29"/>
         </designable>
         <designable name="8z5-Yg-UUa">
-            <size key="intrinsicContentSize" width="97.666666666666671" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="20.333333333333332"/>
         </designable>
         <designable name="BkJ-EG-3bX">
-            <size key="intrinsicContentSize" width="53" height="34"/>
+            <size key="intrinsicContentSize" width="37" height="29"/>
         </designable>
         <designable name="DQM-Bm-Iw4">
-            <size key="intrinsicContentSize" width="187" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="168.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="H3k-Qr-aZc">
-            <size key="intrinsicContentSize" width="337.66666666666669" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="209.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="IRC-qm-tMU">
             <size key="intrinsicContentSize" width="190.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="ImO-LW-82b">
-            <size key="intrinsicContentSize" width="53" height="34"/>
+            <size key="intrinsicContentSize" width="36" height="29"/>
         </designable>
         <designable name="MEY-4S-zBG">
-            <size key="intrinsicContentSize" width="142" height="34"/>
+            <size key="intrinsicContentSize" width="97" height="29"/>
         </designable>
         <designable name="McB-xV-fyP">
-            <size key="intrinsicContentSize" width="787.66666666666663" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="141" height="20.333333333333332"/>
         </designable>
         <designable name="OGc-Ah-B2Q">
             <size key="intrinsicContentSize" width="231" height="34"/>
         </designable>
         <designable name="PE0-wT-KoM">
-            <size key="intrinsicContentSize" width="143.33333333333334" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="132" height="20.333333333333332"/>
         </designable>
         <designable name="ZZ0-U4-Kxs">
-            <size key="intrinsicContentSize" width="177.33333333333334" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="141.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="bHu-At-8Ka">
-            <size key="intrinsicContentSize" width="125.33333333333333" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="111.33333333333333" height="20.333333333333332"/>
         </designable>
         <designable name="dCG-WK-gg0">
             <size key="intrinsicContentSize" width="441" height="20.333333333333332"/>
         </designable>
         <designable name="ffR-78-xzB">
-            <size key="intrinsicContentSize" width="82" height="34"/>
+            <size key="intrinsicContentSize" width="62" height="29"/>
         </designable>
         <designable name="iB4-IF-EY4">
             <size key="intrinsicContentSize" width="266" height="34"/>
         </designable>
         <designable name="krn-fT-lMh">
-            <size key="intrinsicContentSize" width="299" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="147.66666666666666" height="20.333333333333332"/>
         </designable>
         <designable name="qKJ-hu-YmP">
             <size key="intrinsicContentSize" width="89" height="30"/>
@@ -894,19 +894,19 @@
             <size key="intrinsicContentSize" width="151" height="34"/>
         </designable>
         <designable name="tl7-ac-PeD">
-            <size key="intrinsicContentSize" width="180" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="128.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="uWO-Mc-lvh">
-            <size key="intrinsicContentSize" width="89" height="34"/>
+            <size key="intrinsicContentSize" width="63" height="29"/>
         </designable>
         <designable name="vDS-eb-6Ul">
             <size key="intrinsicContentSize" width="902.66666666666663" height="20.333333333333332"/>
         </designable>
         <designable name="z6G-c0-sOB">
-            <size key="intrinsicContentSize" width="771.66666666666663" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="175.33333333333334" height="20.333333333333332"/>
         </designable>
         <designable name="z88-Iu-wjr">
-            <size key="intrinsicContentSize" width="768.66666666666663" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="131" height="20.333333333333332"/>
         </designable>
         <designable name="ztA-az-KD6">
             <size key="intrinsicContentSize" width="902.66666666666663" height="20.333333333333332"/>

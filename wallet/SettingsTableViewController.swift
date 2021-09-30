@@ -114,7 +114,7 @@ class SettingsTableViewController: UITableViewController {
         case 7:
             text = Localizations.AboutPassphrases
         case 8:
-            text = Localizations.AboutCertifico
+            text = Localizations.AboutChertero
             
         // The following are only visible in DEBUG builds
         case 9:
@@ -173,8 +173,8 @@ class SettingsTableViewController: UITableViewController {
             Logger.main.info("About passphrase tapped in settings")
             controller = AboutPassphraseViewController()
         case 8:
-            Logger.main.info("About Certifico")
-            controller = AboutCertifico()
+            Logger.main.info("About Chertero")
+            controller = AboutChertero()
             self.deselectRow()
             
         // The following are only visible in DEBUG builds
