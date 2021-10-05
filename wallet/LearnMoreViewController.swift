@@ -14,7 +14,7 @@ import SafariServices
 class LearnMoreViewController: UIViewController {
 
 
-    @IBOutlet weak var btnCertifico: UIButton!
+    @IBOutlet weak var btnChertero: UIButton!
     @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
@@ -34,8 +34,8 @@ class LearnMoreViewController: UIViewController {
         animation.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         animation.play()
     }
-    @IBAction func openCertifico(_ sender: Any) {
-        let certURL = SFSafariViewController(url: URL(string: "https://certifico.io")!)
+    @IBAction func openChertero(_ sender: Any) {
+        let certURL = SFSafariViewController(url: URL(string: "https://chertero.com")!)
         present(certURL, animated: true)
     }
     

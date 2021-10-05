@@ -346,7 +346,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         let okayButton = DialogButton(frame: .zero)
         okayButton.setTitle(Localizations.Okay, for: .normal)
         okayButton.onTouchUpInside {
-            let url = URL(string: "itms://itunes.apple.com/us/app/certifico/id1543769590")!
+            let url = URL(string: "itms://itunes.apple.com/us/app/chertero/id1543769590")!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             Logger.main.tag(tag).debug("tapped update_app with link: \(url)")
             alert.dismiss(animated: false, completion: nil)

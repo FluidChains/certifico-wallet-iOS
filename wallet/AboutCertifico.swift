@@ -1,5 +1,5 @@
 //
-//  AboutCertifico.swift
+//  AboutChertero.swift
 //  certificates
 //
 //  Created by Sergio Quintero on 12/17/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AboutCertifico: UIViewController {
+class AboutChertero: UIViewController {
 
-    @IBOutlet weak var lblAboutCertifico: LabelC3T5S!
+    @IBOutlet weak var lblAboutChertero: LabelC3T5S!
     @IBOutlet weak var lblVersionBuild: LabelC7T4S!
     
     @IBOutlet weak var lblContactInfo: UILabel!
@@ -19,7 +19,7 @@ class AboutCertifico: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblAboutCertifico.text = Localizations.AboutCertifico
+        lblAboutChertero.text = Localizations.AboutChertero
         
         let version = getVersion()
         let build = getBuildVersion()

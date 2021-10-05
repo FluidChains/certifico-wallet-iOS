@@ -63,6 +63,8 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
     private var hostedIssuer : Issuer?
     private var sourceIssuer : Issuer?
     
+    private(set) var chain : String?
+    
     fileprivate var nonce : String?
 
     // MARK: - Initialization
@@ -71,6 +73,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
     }
     
     init(issuer: Issuer?,
+                 chain : String? = nil,
                  hostedIssuer: Issuer?,
                  isIssuerConfirmed: Bool = false,
                  issuerConfirmedOn: Date? = nil,
@@ -80,6 +83,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
         self.isIssuerConfirmed = isIssuerConfirmed
         self.issuerConfirmedOn = issuerConfirmedOn
         self.introducedWithAddress = introducedWithAddress
+        self.chain = chain
         
         super.init()
     }
@@ -93,6 +97,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
         case issuerConfirmedOn = "issuerConfirmedOn"
         case introducedWithAddress = "introducedWithAddress"
         case introducedOn = "introducedOn"
+        case chain = "chain"
     }
     
     required init(from decoder: Decoder) throws {
@@ -109,6 +114,8 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
         hostedIssuer = try IssuerParser.decodeIfPresent(from: container, forKey: .hostedIssuer)
         sourceIssuer = try IssuerParser.decodeIfPresent(from: container, forKey: .sourceIssuer)
         
+        chain = nil
+        
         nonce = nil
         delegate = nil
         issuerDescription = nil
@@ -123,6 +130,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
         
         try IssuerParser.encodeIfPresent(hostedIssuer, to: &container, forKey: .hostedIssuer)
         try IssuerParser.encodeIfPresent(sourceIssuer, to: &container, forKey: .sourceIssuer)
+        try container.encodeIfPresent(chain, forKey: .chain)
     }
     
     // MARK: NSCoding
@@ -355,7 +363,7 @@ class ManagedIssuer : NSObject, NSCoding, Codable {
                                   isHashed: false,
                                   publicAddress: publicKeyExtracted,
                                   revocationAddress: nil)
-        
+        self.chain = chain
         self.nonce = nonce
         Logger.main.tag(tag).info("calling IssuerIntroductionRequest")
         let introductionRequest = IssuerIntroductionRequest(introduce: recipient, to: issuer, loggingTo: Logger.main.toLoggerProtocol()) { [weak self] (error) in

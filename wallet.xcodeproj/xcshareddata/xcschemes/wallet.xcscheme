@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "83111B231DA4110C006B058D"
-               BuildableName = "Certifico.app"
+               BuildableName = "Chertero.app"
                BlueprintName = "certificates"
                ReferencedContainer = "container:wallet.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "Certifico.app"
+            BuildableName = "Chertero.app"
             BlueprintName = "certificates"
             ReferencedContainer = "container:wallet.xcodeproj">
          </BuildableReference>
@@ -98,7 +98,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "Certifico.app"
+            BuildableName = "Chertero.app"
             BlueprintName = "certificates"
             ReferencedContainer = "container:wallet.xcodeproj">
          </BuildableReference>
@@ -126,7 +126,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "Certifico.app"
+            BuildableName = "Chertero.app"
             BlueprintName = "certificates"
             ReferencedContainer = "container:wallet.xcodeproj">
          </BuildableReference>

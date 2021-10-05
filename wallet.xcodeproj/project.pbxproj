@@ -15,14 +15,14 @@
 		076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE962588773700CA97CE /* inter_reg.ttf */; };
 		076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076BFE972588773700CA97CE /* inter_semibold.ttf */; };
 		076BFEB0258B392900CA97CE /* AboutCertifico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076BFEAE258B392900CA97CE /* AboutCertifico.swift */; };
-		076BFEB1258B392900CA97CE /* AboutCertifico.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076BFEAF258B392900CA97CE /* AboutCertifico.xib */; };
+		076BFEB1258B392900CA97CE /* AboutChertero.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076BFEAF258B392900CA97CE /* AboutChertero.xib */; };
 		0796B93724A5E56A002755B2 /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93624A5E569002755B2 /* AppLocker.swift */; };
 		0796B93924A5E573002755B2 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796B93824A5E572002755B2 /* UI.swift */; };
 		07ACD00E25818AC3002A119C /* introduccion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 07ACD00B25818326002A119C /* introduccion.mp4 */; };
 		07ACD03B2582A005002A119C /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACD0392582A005002A119C /* LearnMoreViewController.swift */; };
 		07ACD03C2582A005002A119C /* LearnMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07ACD03A2582A005002A119C /* LearnMoreViewController.xib */; };
 		07D7FA9124820BF60083A8AD /* CloudKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7FA9024820BF60083A8AD /* CloudKitController.swift */; };
-		247EE1205DE3276E94C6447F /* libPods-certificatesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F807ADD700C59894B14F2E32 /* libPods-certificatesUITests.a */; };
+		1C384159F6679F1588400D90 /* libPods-certificatesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D92F6105AD57464BA842FE /* libPods-certificatesUITests.a */; };
 		4ED0B2DF3AD647A603154AA6 /* InformationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0BB2EA5F0AA019AF2C10A /* InformationLogger.swift */; };
 		830120351EF4483F008EC454 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830120341EF4483F008EC454 /* ArgumentParser.swift */; };
 		830120381EF44AE5008EC454 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830120341EF4483F008EC454 /* ArgumentParser.swift */; };
@@ -122,8 +122,7 @@
 		A9B997A2203F1CE000C05153 /* verify.html in Resources */ = {isa = PBXBuildFile; fileRef = A9B997A0203F1CE000C05153 /* verify.html */; };
 		A9B997A62040611D00C05153 /* IssuerCollectionReturningUserEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B997A52040611C00C05153 /* IssuerCollectionReturningUserEmptyView.xib */; };
 		A9D2B04A202B5893002015F0 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D2B049202B5893002015F0 /* UIElements.swift */; };
-		C03C48B528F12259CBBB2EDD /* libPods-certificatesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A975A9B056C528D3C8D47E /* libPods-certificatesTests.a */; };
-		CB76142A5BE62842F45C1DBC /* libPods-certificates.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDED4D8D8A6E7B17D4AF9C5A /* libPods-certificates.a */; };
+		B62F27302811FD42F5844B2D /* libPods-certificatesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0A25703A60C09A0B11C2C6 /* libPods-certificatesTests.a */; };
 		E5353D11215D656500B0FE1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5353D13215D656500B0FE1E /* InfoPlist.strings */; };
 		EE651190212369A0009AC972 /* CertificateVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65118F212369A0009AC972 /* CertificateVerifier.swift */; };
 		EE6511922126053E009AC972 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6511912126053E009AC972 /* Reachability.swift */; };
@@ -138,6 +137,7 @@
 		EEAF82BA21384E2C008EC1FA /* AddCredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF82B921384E2C008EC1FA /* AddCredentialViewController.swift */; };
 		EEAF834E21470885008EC1FA /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF834D21470884008EC1FA /* Localizations.swift */; };
 		EEAF835B21471542008EC1FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEAF835921471542008EC1FA /* Localizable.strings */; };
+		F7A7C6B815CEB60E8ECCD6A7 /* libPods-certificates.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAC0B8064131A352E89DAA0 /* libPods-certificates.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,7 +181,7 @@
 		076BFE962588773700CA97CE /* inter_reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_reg.ttf; sourceTree = "<group>"; };
 		076BFE972588773700CA97CE /* inter_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = inter_semibold.ttf; sourceTree = "<group>"; };
 		076BFEAE258B392900CA97CE /* AboutCertifico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutCertifico.swift; path = wallet/AboutCertifico.swift; sourceTree = "<group>"; };
-		076BFEAF258B392900CA97CE /* AboutCertifico.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutCertifico.xib; path = wallet/AboutCertifico.xib; sourceTree = "<group>"; };
+		076BFEAF258B392900CA97CE /* AboutChertero.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutChertero.xib; path = wallet/AboutChertero.xib; sourceTree = "<group>"; };
 		0796B93424A5E55E002755B2 /* AppLocker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppLocker.xib; sourceTree = "<group>"; };
 		0796B93624A5E569002755B2 /* AppLocker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
 		0796B93824A5E572002755B2 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -190,21 +190,23 @@
 		07ACD0392582A005002A119C /* LearnMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreViewController.swift; sourceTree = "<group>"; };
 		07ACD03A2582A005002A119C /* LearnMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnMoreViewController.xib; sourceTree = "<group>"; };
 		07D7FA9024820BF60083A8AD /* CloudKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitController.swift; sourceTree = "<group>"; };
+		19D92F6105AD57464BA842FE /* libPods-certificatesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0A25703A60C09A0B11C2C6 /* libPods-certificatesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B03B4B247F8F8500A29F99 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		28A975A9B056C528D3C8D47E /* libPods-certificatesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		315E93E1C74104FA2A9E5BEE /* Pods-certificates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates.release.xcconfig"; path = "Target Support Files/Pods-certificates/Pods-certificates.release.xcconfig"; sourceTree = "<group>"; };
-		3EB764B8BB3FD7B353F896DA /* Pods-certificatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesUITests.release.xcconfig"; path = "Target Support Files/Pods-certificatesUITests/Pods-certificatesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4EB793364002243B1606EE3A /* Pods-certificatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesUITests.debug.xcconfig"; path = "Target Support Files/Pods-certificatesUITests/Pods-certificatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		28DCA5C6038AE71E5405A40B /* Pods-certificates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates.release.xcconfig"; path = "Target Support Files/Pods-certificates/Pods-certificates.release.xcconfig"; sourceTree = "<group>"; };
+		290305723CCABAC97141346A /* Pods-certificatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesTests.release.xcconfig"; path = "Target Support Files/Pods-certificatesTests/Pods-certificatesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4ED0BB2EA5F0AA019AF2C10A /* InformationLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationLogger.swift; sourceTree = "<group>"; };
-		547107A4897E2683CBA678E3 /* Pods-certificatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesTests.debug.xcconfig"; path = "Target Support Files/Pods-certificatesTests/Pods-certificatesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52E1498253DD9DEEF5EDD052 /* Pods-certificatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesTests.debug.xcconfig"; path = "Target Support Files/Pods-certificatesTests/Pods-certificatesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5932798D2326899700FA37B7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5932798E232689AF00FA37B7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		594401E9232C3BA9000ECDCA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		594401EA232C3BCD000ECDCA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		67A119CB27E485CD3DA4367A /* Pods-certificatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesUITests.debug.xcconfig"; path = "Target Support Files/Pods-certificatesUITests/Pods-certificatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CAC0B8064131A352E89DAA0 /* libPods-certificates.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificates.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		830120341EF4483F008EC454 /* ArgumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArgumentParser.swift; path = Utils/ArgumentParser.swift; sourceTree = "<group>"; };
 		830260251F59D70200412C8B /* testnet-2017-09-01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "testnet-2017-09-01.json"; sourceTree = "<group>"; };
 		830AB9EE1DA6BC4B00185E19 /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83111B241DA4110C006B058D /* Certifico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Certifico.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83111B241DA4110C006B058D /* Chertero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chertero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83111B271DA4110C006B058D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83111B2C1DA4110C006B058D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83111B2E1DA4110C006B058D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -276,8 +278,7 @@
 		83D947981E01EA3C0038C4E2 /* CertificateTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CertificateTitleTableViewCell.xib; sourceTree = "<group>"; };
 		83FF5DE61ECBA4100063397C /* Blockcerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Blockcerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FF5DE91ECBAC7A0063397C /* CertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateView.swift; sourceTree = "<group>"; };
-		87F2A48E7925063D9779EC38 /* Pods-certificates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates.debug.xcconfig"; path = "Target Support Files/Pods-certificates/Pods-certificates.debug.xcconfig"; sourceTree = "<group>"; };
-		9F323A8D0706976A89BF427E /* Pods-certificatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesTests.release.xcconfig"; path = "Target Support Files/Pods-certificatesTests/Pods-certificatesTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D6A2AB508EAD8B948188186 /* Pods-certificatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificatesUITests.release.xcconfig"; path = "Target Support Files/Pods-certificatesUITests/Pods-certificatesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A378A929215ACD870049CF28 /* mt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mt; path = mt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A909528120449DD000F29CF5 /* C5T2BLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = C5T2BLabelCell.xib; sourceTree = "<group>"; };
 		A92735592031E1C9002361FD /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -296,9 +297,9 @@
 		A9B997A0203F1CE000C05153 /* verify.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = verify.html; sourceTree = "<group>"; };
 		A9B997A52040611C00C05153 /* IssuerCollectionReturningUserEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssuerCollectionReturningUserEmptyView.xib; sourceTree = "<group>"; };
 		A9D2B049202B5893002015F0 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		AB6E18ED0148B18674E473D7 /* Pods-certificates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certificates.debug.xcconfig"; path = "Target Support Files/Pods-certificates/Pods-certificates.debug.xcconfig"; sourceTree = "<group>"; };
 		E5353D12215D656500B0FE1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E5353D14215D656900B0FE1E /* mt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mt; path = mt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EDED4D8D8A6E7B17D4AF9C5A /* libPods-certificates.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificates.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE65118F212369A0009AC972 /* CertificateVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateVerifier.swift; sourceTree = "<group>"; };
 		EE6511912126053E009AC972 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EE74255D212F479C00B2DAF7 /* AppVersionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionCheck.swift; sourceTree = "<group>"; };
@@ -314,7 +315,6 @@
 		EEAF82DA21405F90008EC1FA /* LaurineGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaurineGenerator.swift; path = Utils/LaurineGenerator.swift; sourceTree = "<group>"; };
 		EEAF834D21470884008EC1FA /* Localizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Localizations.swift; path = wallet/Localizations.swift; sourceTree = "<group>"; };
 		EEAF835A21471542008EC1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F807ADD700C59894B14F2E32 /* libPods-certificatesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-certificatesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,7 +326,7 @@
 				830AB9EF1DA6BC4B00185E19 /* CommonCrypto.framework in Frameworks */,
 				258183E82452BF5000C13632 /* MapKit.framework in Frameworks */,
 				83111B771DA414EB006B058D /* JSONLD.framework in Frameworks */,
-				CB76142A5BE62842F45C1DBC /* libPods-certificates.a in Frameworks */,
+				F7A7C6B815CEB60E8ECCD6A7 /* libPods-certificates.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03C48B528F12259CBBB2EDD /* libPods-certificatesTests.a in Frameworks */,
+				B62F27302811FD42F5844B2D /* libPods-certificatesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247EE1205DE3276E94C6447F /* libPods-certificatesUITests.a in Frameworks */,
+				1C384159F6679F1588400D90 /* libPods-certificatesUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,12 +363,12 @@
 		4495AC1F1B9EBD3AE7518B81 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				87F2A48E7925063D9779EC38 /* Pods-certificates.debug.xcconfig */,
-				315E93E1C74104FA2A9E5BEE /* Pods-certificates.release.xcconfig */,
-				547107A4897E2683CBA678E3 /* Pods-certificatesTests.debug.xcconfig */,
-				9F323A8D0706976A89BF427E /* Pods-certificatesTests.release.xcconfig */,
-				4EB793364002243B1606EE3A /* Pods-certificatesUITests.debug.xcconfig */,
-				3EB764B8BB3FD7B353F896DA /* Pods-certificatesUITests.release.xcconfig */,
+				AB6E18ED0148B18674E473D7 /* Pods-certificates.debug.xcconfig */,
+				28DCA5C6038AE71E5405A40B /* Pods-certificates.release.xcconfig */,
+				52E1498253DD9DEEF5EDD052 /* Pods-certificatesTests.debug.xcconfig */,
+				290305723CCABAC97141346A /* Pods-certificatesTests.release.xcconfig */,
+				67A119CB27E485CD3DA4367A /* Pods-certificatesUITests.debug.xcconfig */,
+				8D6A2AB508EAD8B948188186 /* Pods-certificatesUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				076BFEAE258B392900CA97CE /* AboutCertifico.swift */,
-				076BFEAF258B392900CA97CE /* AboutCertifico.xib */,
+				076BFEAF258B392900CA97CE /* AboutChertero.xib */,
 				EEAF834D21470884008EC1FA /* Localizations.swift */,
 				836031C41E5E513A005B2D2E /* Settings.bundle */,
 				836031C11E5E5064005B2D2E /* Assets */,
@@ -412,7 +412,7 @@
 		83111B251DA4110C006B058D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83111B241DA4110C006B058D /* Certifico.app */,
+				83111B241DA4110C006B058D /* Chertero.app */,
 				83111B381DA4110C006B058D /* certificatesTests.xctest */,
 				8360751C1F2A4CD300758C9E /* certificatesUITests.xctest */,
 			);
@@ -617,9 +617,9 @@
 				83FF5DE61ECBA4100063397C /* Blockcerts.framework */,
 				830AB9EE1DA6BC4B00185E19 /* CommonCrypto.framework */,
 				83111B761DA414EB006B058D /* JSONLD.framework */,
-				EDED4D8D8A6E7B17D4AF9C5A /* libPods-certificates.a */,
-				28A975A9B056C528D3C8D47E /* libPods-certificatesTests.a */,
-				F807ADD700C59894B14F2E32 /* libPods-certificatesUITests.a */,
+				6CAC0B8064131A352E89DAA0 /* libPods-certificates.a */,
+				1D0A25703A60C09A0B11C2C6 /* libPods-certificatesTests.a */,
+				19D92F6105AD57464BA842FE /* libPods-certificatesUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -641,13 +641,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83111B4C1DA4110C006B058D /* Build configuration list for PBXNativeTarget "certificates" */;
 			buildPhases = (
-				17237D8B3167A4927EBA2F3A /* [CP] Check Pods Manifest.lock */,
+				CFC7B7B4104A5B793EB69A58 /* [CP] Check Pods Manifest.lock */,
 				EEAF82D121405E54008EC1FA /* ShellScript */,
 				83111B201DA4110C006B058D /* Sources */,
 				83111B211DA4110C006B058D /* Frameworks */,
 				83111B221DA4110C006B058D /* Resources */,
 				83111B791DA414EC006B058D /* Embed Frameworks */,
-				57598A7A7920C457FDA38E6F /* [CP] Copy Pods Resources */,
+				EBEA3ABAF6577A604D14E72C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -655,14 +655,14 @@
 			);
 			name = certificates;
 			productName = wallet;
-			productReference = 83111B241DA4110C006B058D /* Certifico.app */;
+			productReference = 83111B241DA4110C006B058D /* Chertero.app */;
 			productType = "com.apple.product-type.application";
 		};
 		83111B371DA4110C006B058D /* certificatesTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83111B4F1DA4110C006B058D /* Build configuration list for PBXNativeTarget "certificatesTests" */;
 			buildPhases = (
-				C1B7A92F7086A2590D032BC2 /* [CP] Check Pods Manifest.lock */,
+				4967C5CB8D67336B5EA42314 /* [CP] Check Pods Manifest.lock */,
 				83111B341DA4110C006B058D /* Sources */,
 				83111B351DA4110C006B058D /* Frameworks */,
 				83111B361DA4110C006B058D /* Resources */,
@@ -681,7 +681,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 836075231F2A4CD300758C9E /* Build configuration list for PBXNativeTarget "certificatesUITests" */;
 			buildPhases = (
-				B8F948060BF3E4F2245D225B /* [CP] Check Pods Manifest.lock */,
+				FBB6EFFEDB4BA5E446B48B47 /* [CP] Check Pods Manifest.lock */,
 				836075181F2A4CD300758C9E /* Sources */,
 				836075191F2A4CD300758C9E /* Frameworks */,
 				8360751A1F2A4CD300758C9E /* Resources */,
@@ -781,7 +781,7 @@
 				076BFE9B2588773700CA97CE /* inter_semibold.ttf in Resources */,
 				076BFE9A2588773700CA97CE /* inter_reg.ttf in Resources */,
 				A970D00A2044AFC6004BC1AE /* introduction.mp4 in Resources */,
-				076BFEB1258B392900CA97CE /* AboutCertifico.xib in Resources */,
+				076BFEB1258B392900CA97CE /* AboutChertero.xib in Resources */,
 				EE821EC8215C100000713C47 /* verifier.js in Resources */,
 				838DC1391E43F0D300533AEB /* AddIssuerViewController.xib in Resources */,
 				A909528220449DD000F29CF5 /* C5T2BLabelCell.xib in Resources */,
@@ -844,69 +844,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17237D8B3167A4927EBA2F3A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-certificates-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		57598A7A7920C457FDA38E6F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-certificates/Pods-certificates-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/OpenSans/OpenSans.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OpenSans.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-certificates/Pods-certificates-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8F948060BF3E4F2245D225B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-certificatesUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1B7A92F7086A2590D032BC2 /* [CP] Check Pods Manifest.lock */ = {
+		4967C5CB8D67336B5EA42314 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -928,6 +866,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CFC7B7B4104A5B793EB69A58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-certificates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBEA3ABAF6577A604D14E72C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-certificates/Pods-certificates-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/OpenSans/OpenSans.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OpenSans.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-certificates/Pods-certificates-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EEAF82D121405E54008EC1FA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -940,6 +918,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -x\n\n# Get base path to project\nBASE_PATH=\"$PROJECT_DIR/$PROJECT_NAME\"\n\n#--------- START OF YOUR CONFIGURATION (change Path_To_.. to fit)\n\n# Get path to Laurine Generator script\nLAURINE_PATH=\"$BASE_PATH/Utils/LaurineGenerator.swift\"\n\n# Get path to main localization file (usually english).\nSOURCE_PATH=\"$BASE_PATH/Base.lproj/Localizable.strings\"\n\n# Get path to output. If you use ObjC version of output, set implementation file (.m), as header will be generated automatically\nOUTPUT_PATH=\"$BASE_PATH/Localizations.swift\"\n\n#--------- END OF YOUR CONFIGURATION\n\n# Add permission to generator for script execution\nchmod 755 \"$LAURINE_PATH\"\n\n# Actually generate output. -- CUSTOMIZE -- parameters to your needs (see documentation).\n# Will only re-generate script if something changed\nif [ \"$OUTPUT_PATH\" -ot \"$SOURCE_PATH\" ]; then\n\"$LAURINE_PATH\" -i \"$SOURCE_PATH\" -o \"$OUTPUT_PATH\"\nfi\n";
+		};
+		FBB6EFFEDB4BA5E446B48B47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-certificatesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1234,7 +1234,7 @@
 		};
 		83111B4D1DA4110C006B058D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87F2A48E7925063D9779EC38 /* Pods-certificates.debug.xcconfig */;
+			baseConfigurationReference = AB6E18ED0148B18674E473D7 /* Pods-certificates.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1248,9 +1248,9 @@
 				INFOPLIST_FILE = wallet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.certifico.mywallet;
-				PRODUCT_NAME = Certifico;
+				PRODUCT_NAME = Chertero;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "wallet/wallet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1260,7 +1260,7 @@
 		};
 		83111B4E1DA4110C006B058D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 315E93E1C74104FA2A9E5BEE /* Pods-certificates.release.xcconfig */;
+			baseConfigurationReference = 28DCA5C6038AE71E5405A40B /* Pods-certificates.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1274,9 +1274,9 @@
 				INFOPLIST_FILE = wallet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.certifico.mywallet;
-				PRODUCT_NAME = Certifico;
+				PRODUCT_NAME = Chertero;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "wallet/wallet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1286,7 +1286,7 @@
 		};
 		83111B501DA4110C006B058D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 547107A4897E2683CBA678E3 /* Pods-certificatesTests.debug.xcconfig */;
+			baseConfigurationReference = 52E1498253DD9DEEF5EDD052 /* Pods-certificatesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1305,7 +1305,7 @@
 		};
 		83111B511DA4110C006B058D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F323A8D0706976A89BF427E /* Pods-certificatesTests.release.xcconfig */;
+			baseConfigurationReference = 290305723CCABAC97141346A /* Pods-certificatesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1323,7 +1323,7 @@
 		};
 		836075241F2A4CD300758C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EB793364002243B1606EE3A /* Pods-certificatesUITests.debug.xcconfig */;
+			baseConfigurationReference = 67A119CB27E485CD3DA4367A /* Pods-certificatesUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = GZP78NJ5M9;
@@ -1340,7 +1340,7 @@
 		};
 		836075251F2A4CD300758C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB764B8BB3FD7B353F896DA /* Pods-certificatesUITests.release.xcconfig */;
+			baseConfigurationReference = 8D6A2AB508EAD8B948188186 /* Pods-certificatesUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = GZP78NJ5M9;

@@ -70,7 +70,7 @@ public struct Localizations {
     /// Base translation: Select Backup Methods
     public static var SelectBackupMethods : String = NSLocalizedString("SelectBackupMethods", comment: "")
 
-    /// Base translation: Certifico Backup
+    /// Base translation: Chertero Backup
     public static var BlockcertsBackup : String = NSLocalizedString("BlockcertsBackup", comment: "")
 
     /// Base translation: Enter the one-time code
@@ -154,7 +154,7 @@ public struct Localizations {
     /// Base translation: Continue
     public static var Continue : String = NSLocalizedString("Continue", comment: "")
 
-    /// Base translation: In order to add this issuer, you must have the latest version of Certifico Wallet.
+    /// Base translation: In order to add this issuer, you must have the latest version of Chertero Wallet.
     public static var AppUpdateAlertMessage : String = NSLocalizedString("AppUpdateAlertMessage", comment: "")
 
     /// Base translation: This credential was successfully imported. It can be found in the issuer view.
@@ -192,7 +192,7 @@ public struct Localizations {
     /// Base translation: This doesn't appear to be a valid credential URL. Please check it and try again.
     public static var InvalidCredentialFile : String = NSLocalizedString("InvalidCredentialFile", comment: "")
 
-    /// Base translation: Certifico Wallet
+    /// Base translation: Chertero Wallet
     public static var BlockcertsWallet : String = NSLocalizedString("BlockcertsWallet", comment: "")
 
     /// Base translation: You may add an issuer manually by visiting Settings and tapping Add an Issuer.
@@ -231,6 +231,9 @@ public struct Localizations {
     /// Base translation: Credential URL
     public static var CredentialURL : String = NSLocalizedString("CredentialURL", comment: "")
 
+    /// Base translation: Change Pin Code
+    public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
+
     /// Base translation: Please check it and try again.
     public static var CheckPassphraseTryAgain : String = NSLocalizedString("CheckPassphraseTryAgain", comment: "")
 
@@ -246,7 +249,7 @@ public struct Localizations {
     /// Base translation: Something went wrong when deleting that certificate.
     public static var DeleteCredentialGenericError : String = NSLocalizedString("DeleteCredentialGenericError", comment: "")
 
-    /// Base translation: Please Update Certifico Wallet
+    /// Base translation: Please Update Chertero Wallet
     public static var AppUpdateAlertTitle : String = NSLocalizedString("AppUpdateAlertTitle", comment: "")
 
     /// Base translation: Delete Credential
@@ -395,6 +398,9 @@ public struct Localizations {
     /// Base translation: Credential Info
     public static var CredentialInfo : String = NSLocalizedString("CredentialInfo", comment: "")
 
+    /// Base translation: About Chertero
+    public static var AboutChertero : String = NSLocalizedString("AboutChertero", comment: "")
+
     /// Base translation: Please select at least one option below:
     public static var SelectOne : String = NSLocalizedString("SelectOne", comment: "")
 
@@ -410,7 +416,7 @@ public struct Localizations {
     /// Base translation: Issuer Name
     public static var IssuerName : String = NSLocalizedString("IssuerName", comment: "")
 
-    /// Base translation: Verified!
+    /// Base translation: Blockchain Verified!
     public static var Verified : String = NSLocalizedString("Verified", comment: "")
 
     /// Base translation: Authenticate to replace your secure passphrase.
@@ -448,6 +454,9 @@ public struct Localizations {
     /// Base translation: Couldn't share certificate.
     public static var ShareCredentialError : String = NSLocalizedString("ShareCredentialError", comment: "")
 
+    /// Base translation: Contact Info:
+    public static var ContactInfo : String = NSLocalizedString("ContactInfo", comment: "")
+
     /// Base translation: This is a sample certificate that cannot be verified. Real certificates will perform a live validation process.
     public static var SampleCredentialVerificationImpossible : String = NSLocalizedString("SampleCredentialVerificationImpossible", comment: "")
 
@@ -466,7 +475,7 @@ public struct Localizations {
     /// Base translation: It looks like local authentication is disabled for this app. Without it, showing your passphrase is insecure. Please enable local authentication for this app in Settings.
     public static var LocalAuthenticationDisabled : String = NSLocalizedString("LocalAuthenticationDisabled", comment: "")
 
-    /// Base translation: Please go to the Settings for Certifico Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
+    /// Base translation: Please go to the Settings for Chertero Wallet and enable Touch ID, Face ID, or a passcode to secure your passphrase and try again.
     public static var EnableAuthenticationPrompt : String = NSLocalizedString("EnableAuthenticationPrompt", comment: "")
 
     /// Base translation: Please try to authenticate again to see your passphrase.
@@ -475,16 +484,10 @@ public struct Localizations {
     /// Base translation: Issuer Info
     public static var IssuerInfo : String = NSLocalizedString("IssuerInfo", comment: "")
 
-    /// Base translation: Welcome to the new Certifico Wallet!
+    /// Base translation: Welcome to the new Chertero Wallet!
     public static var UpdateUserHeader : String = NSLocalizedString("UpdateUserHeader", comment: "")
 
     /// Base translation: An issuer was added. Please check your issuers screen.
     public static var AddIssuerSuccess : String = NSLocalizedString("AddIssuerSuccess", comment: "")
-    
-    public static var ChangePin : String = NSLocalizedString("ChangePin", comment: "")
-    
-    public static var AboutCertifico : String = NSLocalizedString("AboutCertifico", comment: "")
-    
-    public static var ContactInfo : String = NSLocalizedString("ContactInfo", comment: "")
 
 }
