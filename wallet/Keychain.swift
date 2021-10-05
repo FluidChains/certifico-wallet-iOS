@@ -199,4 +199,3 @@ extension Keychain {
         save(unusedKeyIndex: index)
     }
 }
-
