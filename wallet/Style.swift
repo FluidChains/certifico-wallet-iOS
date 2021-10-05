@@ -13,17 +13,17 @@ struct Style {
         /// C1: white
         static let C1 = UIColor.white
         
-        /// C2: default background / light grey
-        static let C2 = UIColor(hexString: "#F2F5FA")
+        /// C2: default background / light blue
+        static let C2 = UIColor(hexString: "#F0FBFE")
         
-        /// C3: primary brand color / dark blue
-        static let C3 = UIColor(hexString: "#062451")
+        /// C3: primary brand color / purple
+        static let C3 = UIColor(hexString: "#581689")
         
-        /// C4: secondary brand color / green
-        static let C4 = UIColor(hexString: "#2AB27B")
+        /// C4: secondary brand color / malibu
+        static let C4 = UIColor(hexString: "#66D0F7")
 
-        /// C5: Headlines
-        static let C5 = UIColor(hexString: "#156DCB")
+        /// C5: Headlines / heliotrope
+        static let C5 = UIColor(hexString: "#9C84FF")
         
         /// C6: Primary text
         static let C6 = UIColor(hexString: "#333333")
@@ -43,14 +43,14 @@ struct Style {
         /// C11: Selected primary button background
         static let C11 = UIColor(hexString: "#006239")
         
-        /// C12: Dsiabled/Pending
+        /// C12: Disable/Pending
         static let C12 = UIColor(hexString: "#9F9F9F")
         
         /// C13: drop shadow, 5% black
         static let C13 = UIColor(hexString: "#0000000C")
         
-        /// C14: button disabled text
-        static let C14 = UIColor(hexString: "#6FE2AC")
+        /// C14: button disabled text /  Secondary
+        static let C14 = UIColor(hexString: "#66D0F7")
         
         /// C15: Verification status bar failed state
         static let C15 = UIColor(hexString: "#FDE6E6")
@@ -67,11 +67,11 @@ struct Style {
             
             switch weight {
             case .regular:
-                font = UIFont.openSansFont(ofSize: size)
+                font = UIFont(name: "Inter-Regular", size: size)!
             case .semiBold:
-                font = UIFont.openSansSemiBoldFont(ofSize: size)
+                font = UIFont(name: "Inter-SemiBold", size: size)!
             case .bold:
-                font = UIFont.openSansBoldFont(ofSize: size)
+                font = UIFont(name: "Inter-Bold", size: size)!
             }
             
             if isDynamic {

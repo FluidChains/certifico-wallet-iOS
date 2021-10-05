@@ -41,6 +41,7 @@ class SettingsTableViewController: UITableViewController {
     // Mark: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         clearsSelectionOnViewWillAppear = true
@@ -88,7 +89,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isDebugBuild ? 11 : 6
+        return isDebugBuild ? 15 : 9
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,21 +104,30 @@ class SettingsTableViewController: UITableViewController {
         case 2:
             text = Localizations.MyPassphrase
         case 3:
-            text = Localizations.AboutPassphrases
-        case 4:
-            text = Localizations.PrivacyPolicy
-        case 5:
             text = Localizations.EmailLogs
-        // The following are only visible in DEBUG builds
+        case 4:
+            text = Localizations.ChangePin
+        case 5:
+            text = Localizations.PrivacyPolicy
         case 6:
-            text = "[DEBUG] Destroy passphrase & crash"
+            text = Localizations.LearnMore
         case 7:
-            text = "[DEBUG] Delete issuers & certificates"
+            text = Localizations.AboutPassphrases
         case 8:
-            text = "[DEBUG] Destroy all data & crash"
+            text = Localizations.AboutCertifico
+            
+        // The following are only visible in DEBUG builds
         case 9:
-            text = "[DEBUG] Show onboarding"
+            text = Localizations.BackupRestore
         case 10:
+            text = "[DEBUG] Destroy passphrase & crash"
+        case 11:
+            text = "[DEBUG] Delete issuers & certificates"
+        case 12:
+            text = "[DEBUG] Destroy all data & crash"
+        case 13:
+            text = "[DEBUG] Show onboarding"
+        case 14:
             text = "[DEBUG] Clear Logs"
         default:
             text = nil
@@ -147,31 +157,45 @@ class SettingsTableViewController: UITableViewController {
             authenticate()
             controller = nil
         case 3:
-            Logger.main.info("About passphrase tapped in settings")
-            controller = AboutPassphraseViewController()
-        case 4:
-            Logger.main.info("Privacy statement tapped in settings")
-            controller = PrivacyViewController()
-        case 5:
             Logger.main.info("Share device logs")
             controller = nil
             shareLogs()
+        case 4:
+            Logger.main.info("Change pin code")
+            changePassCode()
+        case 5:
+            Logger.main.info("Privacy statement tapped in settings")
+            controller = PrivacyViewController()
+        case 6:
+            Logger.main.info("Learn more")
+             controller = LearnMoreViewController()
+        case 7:
+            Logger.main.info("About passphrase tapped in settings")
+            controller = AboutPassphraseViewController()
+        case 8:
+            Logger.main.info("About Certifico")
+            controller = AboutCertifico()
+            self.deselectRow()
             
         // The following are only visible in DEBUG builds
-        case 6:
+        case 9:
+            Logger.main.info("Backup and Restore")
+            controller = nil
+           // showBackupRestore()
+        case 10:
             Logger.main.info("Destroy passphrase & crash...")
             configuration = AppConfiguration(shouldDeletePassphrase: true, shouldResetAfterConfiguring: true)
-        case 7:
+        case 11:
             Logger.main.info("Delete all issuers & certificates...")
             configuration = AppConfiguration(shouldDeleteIssuersAndCertificates: true)
             tableView.deselectRow(at: indexPath, animated: true)
-        case 8:
+        case 12:
             Logger.main.info("Delete all data & crash...")
             configuration = AppConfiguration.resetEverything
-        case 9:
+        case 13:
             let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
             present(storyboard.instantiateInitialViewController()!, animated: false, completion: nil)
-        case 10:
+        case 14:
             Logger.main.clearLogs()
             self.deselectRow()
         default:
@@ -185,6 +209,23 @@ class SettingsTableViewController: UITableViewController {
         if let controller = controller {
             navigationController?.pushViewController(controller, animated: true)
         }
+    }
+    
+    func changePassCode() {
+        Logger.main.info("Change passcode")
+        
+        var options = ALOptions()
+        options.isSensorsEnabled = true
+        options.color = Style.Color.C3
+        options.image = UIImage(named: "Logo")
+            
+        if (Keychain.hasPassphrase()) {
+            self.dismiss(animated: true, completion: nil)
+            AppLocker.present(with: .change, and: options)
+        } else {
+            Logger.main.info("Not passcode present")
+        }
+        self.deselectRow()
     }
     
     func deleteIssuersAndCertificates() {
@@ -249,6 +290,7 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    
     // MARK: - Add Issuer
     
     func showAddIssuerFlow() {
@@ -257,6 +299,10 @@ class SettingsTableViewController: UITableViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    func showBackupRestore() {
+        let controller = BackupRestoreViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     // MARK: - User Authentication (TouchID/FaceID)
     

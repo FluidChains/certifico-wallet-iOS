@@ -8,6 +8,9 @@
 
 import UIKit
 import AVKit
+import CloudKit
+
+
 
 class OnboardingControllerBase : UIViewController {
 
@@ -16,8 +19,10 @@ class OnboardingControllerBase : UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
+    
     @IBAction func playWelcomeVideo() {
-        guard let path = Bundle.main.path(forResource: "introduction", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: Localizations.VideoIntroduction, ofType:"mp4") else {
+            print(Localizations.VideoIntroduction)
             print("Video file not found")
             return
         }
@@ -39,7 +44,7 @@ class OnboardingControllerBase : UIViewController {
     }
     
     @objc func didEndPlaying(_ notification: Notification) {
-        presentedViewController?.dismiss(animated: true, completion: nil)
+        presentedViewController?.dismiss(animated: true, completion: nil) 
     }
     
 }
@@ -71,6 +76,74 @@ class ScrollingOnboardingControllerBase : OnboardingControllerBase {
 }
 
 class LandingScreenViewController : OnboardingControllerBase {
+    
+   // @IBOutlet weak var icloudRestoreButton: HomeSecondaryButton!
+    
+    /*@IBAction func icloudRestore() {
+              
+        var seed = CKRecord(recordType: "Seed")
+        var index = CKRecord(recordType: "Index")
+        var password = ""
+        CloudKitManager().fetchSeedPhrase(completion: { (seedRecords, error) in
+        guard error == nil, let seedRecords = seedRecords else {
+            print(error)
+                as Any
+            return
+        }
+            
+        if seedRecords.count == 0 {
+            guard let seed = seedRecords.first else {
+                return
+            }
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title:
+                    Localizations.Success, message: "Enter Password", preferredStyle: .alert)
+                    alertController.addTextField { (textField: UITextField!) -> Void in
+                        textField.placeholder = "Enter Password to encrypt"
+                    }
+                    let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+                        let password = alertController.textFields![0] as UITextField
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                    
+                    alertController.addAction(saveAction)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                    
+                DispatchQueue.main.async {
+                    let alert = AlertViewController.create(title: Localizations.Success, message: Localizations.iCloudSavedOK, icon: .success)
+                    let okayButton = DialogButton(frame: .zero)
+                        okayButton.setTitle(Localizations.Okay, for: .normal)
+                        okayButton.onTouchUpInside { [weak self] in
+                            alert.dismiss(animated: false, completion: nil)
+                        }
+                    alert.set(buttons: [okayButton])
+                    self.present(alert, animated: false, completion: nil)
+                    
+                }
+                
+            } else {
+                DispatchQueue.main.async {
+                    let alert = AlertViewController.create(title: Localizations.iCloudBackup, message: Localizations.iCloudExist, icon: .success)
+                    let okayButton = DialogButton(frame: .zero)
+                        okayButton.setTitle(Localizations.Okay, for: .normal)
+                        okayButton.onTouchUpInside { [weak self] in
+                            alert.dismiss(animated: false, completion: nil)
+                        }
+                    alert.set(buttons: [okayButton])
+                    self.present(alert, animated: false, completion: nil)
+                    return
+                }
+            }
+            
+        })
+        
+            
+        
+    }*/
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = ""
@@ -99,7 +172,6 @@ class WelcomeReturningUsersViewController : ScrollingOnboardingControllerBase {
         view.backgroundColor = Style.Color.C1
         title = Localizations.Welcome
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.hasReenteredPassphrase)
-        videoPlayButton.accessibilityLabel = Localizations.PlayIntroVideo
     }
     
     override func viewDidLayoutSubviews() {
@@ -143,7 +215,10 @@ class NewUserViewController : ScrollingOnboardingControllerBase {
 class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityItemSource {
     @IBOutlet var manualButton : CheckmarkButton!
     @IBOutlet var copyButton : CheckmarkButton!
+   // @IBOutlet var icloudButton : CheckmarkButton!
     @IBOutlet var continueButton : PrimaryButton!
+    
+    private let manager = CloudKitManager()
     
     static var hasPerformedBackup : Bool {
         return UserDefaults.standard.bool(forKey: UserDefaultsKey.hasPerformedBackup)
@@ -167,7 +242,72 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
             }
         }
     }
+    
+    var hasiCloudBackup = false {
+        didSet {
+            if hasiCloudBackup {
+                set(hasPerformedBackup: true)
+            }
+        }
+    }
+    
     var passphrase : String?
+      
+   @IBAction func icloudBackup() {
+        manager.fetchSeedPhrase(completion: { (records, error) in
+            guard error == nil, let records = records else {
+                return
+            }
+            if records.count == 0 {
+                guard let seedphrase = Keychain.loadSeedPhrase() else { return  }
+                
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: Localizations.Success, message: "Enter Password", preferredStyle: .alert)
+                    alertController.addTextField { (textField: UITextField!) -> Void in
+                        textField.placeholder = "Enter Password to encrypt"
+                    }
+                    let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+                        let password = alertController.textFields![0] as UITextField
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                    
+                    alertController.addAction(saveAction)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                    
+                self.manager.addRecord(record: seedphrase)
+                DispatchQueue.main.async {
+                    let alert = AlertViewController.create(title: Localizations.Success, message: Localizations.iCloudSavedOK, icon: .success)
+                    let okayButton = DialogButton(frame: .zero)
+                        okayButton.setTitle(Localizations.Okay, for: .normal)
+                        okayButton.onTouchUpInside { [weak self] in
+                            alert.dismiss(animated: false, completion: nil)
+                        }
+                    alert.set(buttons: [okayButton])
+                    self.present(alert, animated: false, completion: nil)
+                    
+                }
+                
+            } else {
+                DispatchQueue.main.async {
+                    let alert = AlertViewController.create(title: Localizations.iCloudBackup, message: Localizations.iCloudExist, icon: .success)
+                    let okayButton = DialogButton(frame: .zero)
+                        okayButton.setTitle(Localizations.Okay, for: .normal)
+                        okayButton.onTouchUpInside { [weak self] in
+                            alert.dismiss(animated: false, completion: nil)
+                        }
+                    alert.set(buttons: [okayButton])
+                    self.present(alert, animated: false, completion: nil)
+                    return
+                }
+            }
+            
+        })
+        self.hasiCloudBackup = true
+        self.updateStates()
+        
+    }
     
     @IBAction func backupManual() {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
@@ -215,12 +355,19 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
         }
     }
     
+    var window: UIWindow?
+    
     @IBAction func dismiss() {
-        dismiss(animated: true, completion: nil)
+        
+            // Fallback on earlier versions
+            dismiss(animated: true, completion: nil)
+            
+        
     }
     
     fileprivate func updateStates() {
         manualButton.checked = hasWrittenPasscode
+    //  icloudButton.checked = hasiCloudBackup
         copyButton.checked = hasCopiedPasscode
         continueButton.isEnabled = hasWrittenPasscode || hasCopiedPasscode
 
@@ -228,11 +375,30 @@ class OnboardingBackupMethods : ScrollingOnboardingControllerBase, UIActivityIte
         continueButton.setTitle(title, for: .normal)
         continueButton.setTitle(title, for: .highlighted)
         continueButton.setTitle(title, for: .disabled)
+        
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Localizations.BackupPassphrase
+       // checkiCloud()
+    }
+    
+    func checkiCloud() {
+        manager.fetchSeedPhrase(completion: { (records, error) in
+            guard error == nil, let records = records else {
+                 print(error)
+                    as Any
+                return
+            }
+            if records.count > 0 {
+                DispatchQueue.main.async {
+                    self.hasiCloudBackup = true
+                    self.updateStates()
+                }
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

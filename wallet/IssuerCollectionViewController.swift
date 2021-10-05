@@ -17,10 +17,10 @@ private let segueToViewIssuer = "ShowIssuerDetail"
 
 public enum AutocompleteRequest {
     case none
-    case addIssuer(identificationURL: URL, nonce : String)
+    case addIssuer(identificationURL: URL, nonce : String, chain: String)
     case addCertificate(certificateURL : URL, silently: Bool, animated: Bool)
 }
- 
+
 class IssuerCollectionViewController: UICollectionViewController {
     private let tag = String(describing: IssuerCollectionViewController.self)
     
@@ -35,7 +35,7 @@ class IssuerCollectionViewController: UICollectionViewController {
             }
         }
     }
-
+    
     // TODO: Should probably be AttributedIssuer, once I make up that model.
     var managedIssuers = [ManagedIssuer]()
     var pendingNewManagedIssuer: ManagedIssuer?
@@ -45,15 +45,17 @@ class IssuerCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         Logger.main.tag(tag).info("view_did_load")
         
+        
         title = Localizations.BlockcertsWallet
-
+        
         // Register for notifications
         NotificationCenter.default.addObserver(self, selector: #selector(redirectRequested(notification:)), name: NotificationNames.redirectToCertificate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onboardingCompleted(notification:)), name: NotificationNames.onboardingComplete, object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCertificates(notification:)), name: NotificationNames.reloadCertificates, object: nil)
+        
         // Set up the Collection View
         let cellNib = UINib(nibName: "IssuerCollectionViewCell", bundle: nil)
         collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
@@ -63,21 +65,40 @@ class IssuerCollectionViewController: UICollectionViewController {
         collectionView?.register(UINib(nibName: "C5T2BLabelCell", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView")
         collectionView?.delegate = self
         collectionView?.backgroundColor = Style.Color.C2
-
+        
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: collectionView!.bounds.width - 40, height: 136)
         layout.sectionInset = UIEdgeInsetsMake(12, 20, 8, 20)
-
+        
         // Load any existing issuers.
         loadIssuers(shouldReloadCollection: false)
         loadCertificates(shouldReloadCollection: false)
         reloadCollectionView()
-
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
+        
         loadOnboardingIfNeeded()
+        validatePassCode()
+
+    }
+    
+    func validatePassCode() {
+        Logger.main.info("Validate passcode")
+        
+        var options = ALOptions()
+        options.isSensorsEnabled = true
+        options.color = Style.Color.C3
+        options.image = UIImage(named: "Logo")
+        
+        if (Keychain.hasPassCode()) {
+            AppLocker.present(with: .validate, and: options)
+        } else {
+            AppLocker.present(with: .create, and: options)
+        }
+        
     }
 
+    
     override func viewWillAppear(_ animated: Bool) {
         Logger.main.tag(tag).info("view_will_appear")
         loadIssuers(shouldReloadCollection: false)
@@ -94,7 +115,7 @@ class IssuerCollectionViewController: UICollectionViewController {
             shouldRedirectToCertificate = nil
         }
     }
-
+    
     func loadBackgroundView() {
         if managedIssuers.isEmpty {
             loadEmptyBackgroundView()
@@ -108,7 +129,7 @@ class IssuerCollectionViewController: UICollectionViewController {
             layout.headerReferenceSize = CGSize(width: view.bounds.width, height: 44)
         }
     }
-
+    
     func loadEmptyBackgroundView() {
         if UserDefaults.standard.bool(forKey: UserDefaultsKey.hasReenteredPassphrase) {
             let emptyView: IssuerCollectionReturningUserEmptyView = .fromNib()
@@ -130,10 +151,11 @@ class IssuerCollectionViewController: UICollectionViewController {
                 let welcome = storyboard.instantiateViewController(withIdentifier: "WelcomeReturningUsers")
                 vc.viewControllers = [welcome]
             }
-            present(vc, animated: false, completion: nil)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
         }
     }
-
+    
     // MARK: - Actions
     @IBAction func settingsTapped(_ sender: UIBarButtonItem) {
         Logger.main.tag(tag).info("Settings button tapped")
@@ -164,6 +186,10 @@ class IssuerCollectionViewController: UICollectionViewController {
         processAutocompleteRequest()
     }
     
+    @objc func reloadCertificates(notification: Notification) {
+        loadCertificates(shouldReloadCollection: true)
+    }
+    
     func makeViewControllerVisible(action: @escaping () -> Void) {
         if let modalVC = presentedViewController {
             modalVC.dismiss(animated: false) {
@@ -184,11 +210,11 @@ class IssuerCollectionViewController: UICollectionViewController {
         case .none:
             break
             
-        case .addIssuer(let identificationURL, let nonce):
+        case .addIssuer(let identificationURL, let nonce, let chain):
             Logger.main.tag(tag).info("Processing autocomplete request to add issuer at \(identificationURL)")
-
+            
             makeViewControllerVisible() {
-                self.addIssuerFromUniversalLink(url: identificationURL, nonce: nonce)
+                self.addIssuerFromUniversalLink(url: identificationURL, nonce: nonce, chain: chain)
             }
             
         case .addCertificate(let certificateURL, let silently, let animated):
@@ -199,27 +225,27 @@ class IssuerCollectionViewController: UICollectionViewController {
             }
         }
     }
-
+    
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return managedIssuers.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let genericCell : UICollectionViewCell!
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! IssuerCollectionViewCell
-
+        
         let managedIssuer = managedIssuers[indexPath.item]
         guard let issuer = managedIssuer.issuer else {
             cell.issuerName = Localizations.MissingIssuer
             return cell
         }
-
+        
         cell.imageView.image = UIImage(data: issuer.image)
         cell.issuerName = issuer.name
         cell.certificateCount = certificates.reduce(0, { (count, certificate) -> Int in
@@ -228,9 +254,9 @@ class IssuerCollectionViewController: UICollectionViewController {
             }
             return count
         })
-
+        
         genericCell = cell
-
+        
         // Common styling
         genericCell.layer.borderColor = Style.Color.C8.cgColor
         genericCell.layer.borderWidth = 1
@@ -238,7 +264,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         genericCell.layer.shadowColor = Style.Color.C13.cgColor
         genericCell.layer.shadowRadius = 4
         genericCell.layer.shadowOffset = CGSize(width: 2, height: 2)
-
+        
         return genericCell
     }
     
@@ -246,7 +272,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView", for: indexPath)
         return headerView
     }
-
+    
     // MARK: Issuer handling
     func reloadCollectionView() {
         DispatchQueue.main.async {
@@ -254,19 +280,19 @@ class IssuerCollectionViewController: UICollectionViewController {
             self.loadBackgroundView()
         }
     }
-
+    
     func loadIssuers(shouldReloadCollection : Bool = true) {
         managedIssuers = ManagedIssuerManager().load()
-
+        
         if shouldReloadCollection {
             reloadCollectionView()
         }
     }
-
-    func addIssuerFromUniversalLink(url: URL, nonce: String) {
+    
+    func addIssuerFromUniversalLink(url: URL, nonce: String, chain: String) {
         let tag = self.tag
         Logger.main.tag(tag).debug("add issuer form universal link with url: \(url) and nonce: \(nonce)")
-
+        
         Logger.main.tag(tag).info("checking network")
         if !Reachability.isNetworkReachable() {
             Logger.main.tag(tag).error("network unreachable")
@@ -278,7 +304,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         
         alert = AlertViewController.createProgress(title: Localizations.AddingIssuer)
         present(alert!, animated: false, completion: nil)
-
+        
         Logger.main.tag(tag).info("checking update required")
         AppVersion.checkUpdateRequired { [weak self] updateRequired in
             guard !updateRequired else {
@@ -290,13 +316,13 @@ class IssuerCollectionViewController: UICollectionViewController {
             
             self?.pendingNewManagedIssuer = ManagedIssuer()
             self?.pendingNewManagedIssuer!.delegate = self
-            self?.pendingNewManagedIssuer!.add(from: url, nonce: nonce, completion: { error in
+            self?.pendingNewManagedIssuer!.add(from: url, nonce: nonce, chain: chain, completion: { error in
                 guard error == nil else {
                     Logger.main.tag(tag).error("Error adding issuer \(error)")
                     self?.showAddIssuerError()
                     return
                 }
-
+                
                 self?.dismissWebView()
                 self?.alert?.dismiss(animated: false, completion: nil)
                 
@@ -320,7 +346,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         let okayButton = DialogButton(frame: .zero)
         okayButton.setTitle(Localizations.Okay, for: .normal)
         okayButton.onTouchUpInside {
-            let url = URL(string: "itms://itunes.apple.com/us/app/blockcerts-wallet/id1146921514")!
+            let url = URL(string: "itms://itunes.apple.com/us/app/certifico/id1543769590")!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             Logger.main.tag(tag).debug("tapped update_app with link: \(url)")
             alert.dismiss(animated: false, completion: nil)
@@ -354,7 +380,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         }
         alert.set(buttons: [okayButton])
     }
-
+    
     func saveIssuers() {
         Logger.main.tag(tag).info("saving issuer")
         let list = ManagedIssuerList(managedIssuers: managedIssuers)
@@ -369,10 +395,10 @@ class IssuerCollectionViewController: UICollectionViewController {
             Logger.main.tag(tag).error("An exception was thrown saving the managed issuers list: \(error)")
         }
     }
-
+    
     func add(managedIssuer: ManagedIssuer) {
         managedIssuer.delegate = self
-
+        
         // If we already have this issuer present, then let's remove it from the list and use the existing one to update it.
         // It's not great -- Really these should be immutable models so I could just test for equality.
         var otherIssuers = managedIssuers.filter { (existingManagedIssuer) -> Bool in
@@ -380,12 +406,12 @@ class IssuerCollectionViewController: UICollectionViewController {
         }
         otherIssuers.append(managedIssuer)
         managedIssuers = otherIssuers
-
+        
         saveIssuers()
         self.collectionView?.reloadData()
         self.loadBackgroundView()
     }
-
+    
     func remove(managedIssuer: ManagedIssuer) {
         guard let index = managedIssuers.index(of: managedIssuer) else {
             return
@@ -394,21 +420,21 @@ class IssuerCollectionViewController: UICollectionViewController {
         
         managedIssuers.remove(at: index)
         saveIssuers()
-
+        
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
     }
-
-
+    
+    
     // MARK: Certificate handling
     func loadCertificates(shouldReloadCollection : Bool = true) {
         Logger.main.tag(tag).info("loading certificates")
         certificates = []
-
+        
         let existingFiles = try? FileManager.default.contentsOfDirectory(at: certificatesDirectory, includingPropertiesForKeys: nil, options: [])
         let files = existingFiles ?? []
-
+        
         Logger.main.tag(tag).debug("existing file certificates: \(existingFiles)")
         let loadedCertificates : [Certificate] = files.compactMap { fileURL in
             guard let data = try? Data(contentsOf: fileURL) else {
@@ -418,21 +444,21 @@ class IssuerCollectionViewController: UICollectionViewController {
             Logger.main.tag(tag).info("trying to parse certificate")
             return try? CertificateParser.parse(data: data)
         }
-
+        
         loadedCertificates.forEach { certificate in
             self.add(certificate: certificate)
         }
-
+        
         if shouldReloadCollection {
             reloadCollectionView()
         }
     }
-
+    
     func saveCertificates() {
         Logger.main.tag(tag).info("saving certificates")
         // Make sure the `certificatesDirectory` exists by trying to create it every time.
         try? FileManager.default.createDirectory(at: certificatesDirectory, withIntermediateDirectories: false, attributes: nil)
-
+        
         for certificate in certificates {
             guard let fileName = certificate.filename else {
                 Logger.main.tag(tag).error("Couldn't convert \(certificate.title) to character encoding.")
@@ -446,12 +472,12 @@ class IssuerCollectionViewController: UICollectionViewController {
             }
         }
     }
-
+    
     func add(certificate: Certificate) {
         let isKnownIssuer = managedIssuers.contains(where: { (existingManager) -> Bool in
             return existingManager.issuer?.id == certificate.issuer.id
         })
-
+        
         if !isKnownIssuer {
             let managedIssuer = ManagedIssuer()
             managedIssuer.manage(issuer: certificate.issuer) { [weak self] success in
@@ -462,11 +488,11 @@ class IssuerCollectionViewController: UICollectionViewController {
             
             add(managedIssuer: managedIssuer)
         }
-
+        
         certificates.append(certificate)
         saveCertificates()
     }
-
+    
     func addCertificateFromUniversalLink(url: URL, silently: Bool = false, animated: Bool = true) {
         Logger.main.debug("add certificate from universal link: \(url)")
         if !Reachability.isNetworkReachable() {
@@ -477,7 +503,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         
         alert = AlertViewController.createProgress(title: Localizations.AddingCredential)
         present(alert!, animated: false, completion: nil)
-
+        
         Logger.main.tag(tag).info("checking update required")
         AppVersion.checkUpdateRequired { [weak self] updateRequired in
             guard !updateRequired else {
@@ -514,13 +540,13 @@ class IssuerCollectionViewController: UICollectionViewController {
     
     func showCertificateAlreadyAdded(_ certificate: Certificate) {
         let alert = AlertViewController.createWarning(title: Localizations.FileAlreadyImported, message: Localizations.FileAlreadyImportedExplanation)
-
+        
         alert.type = .normal
-
+        
         if (alert.buttons.count > 0) {
             alert.buttons[0].removeFromSuperview()
         }
-
+        
         let okayButton = DialogButton(frame: .zero)
         okayButton.setTitle(Localizations.Okay, for: .normal)
         okayButton.onTouchUpInside { [weak self] in
@@ -534,7 +560,7 @@ class IssuerCollectionViewController: UICollectionViewController {
             alert.dismiss(animated: false, completion: nil)
         }
         alert.set(buttons: [okayButton, cancelButton], clear: true)
-
+        
         present(alert, animated: false, completion: nil)
     }
     
@@ -554,7 +580,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         
         present(alert, animated: false, completion: nil)
     }
-
+    
     func certificateDataFromURL(_ url: URL) -> Data? {
         Logger.main.tag(tag).debug("certificate data from url: \(url)")
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
@@ -584,18 +610,18 @@ class IssuerCollectionViewController: UICollectionViewController {
         }
         
         let issuerController = IssuerViewController()
-
+        
         issuerController.managedIssuer = managedIssuer
         let matchingCertificates = certificates.filter { certificate in
             return managedIssuer.issuer != nil && certificate.issuer.id == managedIssuer.issuer!.id
         }
         issuerController.certificates = matchingCertificates
-
+        
         self.navigationController?.pushViewController(issuerController, animated: animated)
-
+        
         return issuerController
     }
-
+    
     func navigateTo(certificate: Certificate, animated: Bool = true) {
         Logger.main.tag(tag).info("Navigating to certificate \(certificate.title)")
         
@@ -607,7 +633,7 @@ class IssuerCollectionViewController: UICollectionViewController {
         }).first else {
             return
         }
-
+        
         let issuerController = navigateTo(issuer: managedIssuer, animated: animated)
         issuerController.navigateTo(certificate: certificate, animated: animated)
     }
@@ -625,7 +651,7 @@ extension IssuerCollectionViewController { //  : UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let managedIssuer = managedIssuers[indexPath.item]
-
+        
         _ = navigateTo(issuer: managedIssuer)
     }
 }
@@ -660,7 +686,7 @@ extension IssuerCollectionViewController : ManagedIssuerDelegate {
             self?.webViewNavigationController?.dismiss(animated: true, completion: nil)
         }
     }
-
+    
     func cancelWebLogin() {
         pendingNewManagedIssuer?.abortRequests()
     }
@@ -696,7 +722,7 @@ extension IssuerCollectionViewController {
             Logger.main.tag(tag).info("invalid credential file while parsing data")
             return
         }
-
+        
         // At this point, data is totally a valid certificate. Let's save that to the documents directory.
         add(certificate: certificate)
     }
@@ -706,7 +732,7 @@ extension IssuerCollectionViewController : UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         Logger.main.tag(tag).info("document picker at: \(url)")
         let data = try? Data(contentsOf: url)
-
+        
         importCertificate(from: data)
     }
 }

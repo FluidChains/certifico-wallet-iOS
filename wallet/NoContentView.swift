@@ -11,7 +11,7 @@ import UIKit
 class NoContentView: UIView {
     private var title : String?
     private var subtitle : String?
-
+	
     init(title: String, subtitle: String) {
         self.title = title
         self.subtitle = subtitle

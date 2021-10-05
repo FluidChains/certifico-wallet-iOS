@@ -1,0 +1,6 @@
+module HDWalletKit {
+  umbrella header "HDWalletKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

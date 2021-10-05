@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "83111B231DA4110C006B058D"
-               BuildableName = "certificates.app"
+               BuildableName = "Certifico.app"
                BlueprintName = "certificates"
                ReferencedContainer = "container:wallet.xcodeproj">
             </BuildableReference>
@@ -47,6 +47,15 @@
             </ActionContent>
          </ExecutionAction>
       </PostActions>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "83111B231DA4110C006B058D"
+            BuildableName = "Certifico.app"
+            BlueprintName = "certificates"
+            ReferencedContainer = "container:wallet.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -73,17 +82,6 @@
             </LocationScenarioReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "certificates.app"
-            BlueprintName = "certificates"
-            ReferencedContainer = "container:wallet.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -100,7 +98,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "certificates.app"
+            BuildableName = "Certifico.app"
             BlueprintName = "certificates"
             ReferencedContainer = "container:wallet.xcodeproj">
          </BuildableReference>
@@ -128,7 +126,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "83111B231DA4110C006B058D"
-            BuildableName = "certificates.app"
+            BuildableName = "Certifico.app"
             BlueprintName = "certificates"
             ReferencedContainer = "container:wallet.xcodeproj">
          </BuildableReference>

@@ -94,7 +94,7 @@ class CertificateVerifier: NSObject, WKScriptMessageHandler {
             let success = (status == VerificationStatus.success.rawValue)
             
             if success {
-                delegate?.updateStatus(message: Localizations.VerificationSuccess(blockchain!), status: .success)
+                delegate?.updateStatus(message: Localizations.VerificationSuccess(blockchain!.uppercased()), status: .success)
             } else {
                 delegate?.updateStatus(message: Localizations.VerificationFail, status: .failure)
             }

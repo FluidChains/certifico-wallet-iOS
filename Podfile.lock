@@ -1,39 +1,43 @@
 PODS:
-  - Bugsee (1.20.1)
-  - CoreBitcoin (0.6.8.1):
-    - ISO8601DateFormatter
-    - OpenSSL-Universal (= 1.0.1.16)
-  - ISO8601DateFormatter (0.8)
+  - AppLocker (2.0):
+    - Valet
+  - CryptoSwift (1.0.0)
+  - HDWalletKit (0.3.7):
+    - CryptoSwift (~> 1.0.0)
+    - secp256k1.swift (~> 0.1.4)
   - lottie-ios (2.5.0)
   - OpenSans (1.0.3)
-  - OpenSSL-Universal (1.0.1.16)
+  - secp256k1.swift (0.1.4)
+  - Valet (4.1.1)
 
 DEPENDENCIES:
-  - Bugsee
-  - CoreBitcoin (from `https://raw.github.com/oleganza/CoreBitcoin/master/CoreBitcoin.podspec`)
-  - lottie-ios
+  - AppLocker
+  - HDWalletKit (from `https://raw.github.com/FluidChains/HDWallet/master/HDWalletKit.podspec`)
+  - lottie-ios (= 2.5.0)
   - OpenSans
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Bugsee
-    - ISO8601DateFormatter
+  trunk:
+    - AppLocker
+    - CryptoSwift
     - lottie-ios
     - OpenSans
-    - OpenSSL-Universal
+    - secp256k1.swift
+    - Valet
 
 EXTERNAL SOURCES:
-  CoreBitcoin:
-    :podspec: https://raw.github.com/oleganza/CoreBitcoin/master/CoreBitcoin.podspec
+  HDWalletKit:
+    :podspec: https://raw.github.com/FluidChains/HDWallet/master/HDWalletKit.podspec
 
 SPEC CHECKSUMS:
-  Bugsee: e47a04c77552c3880d724b17b31cef138f398d89
-  CoreBitcoin: 4ac6f6a61e543f08399c2fe57496d4fdcbaf74f9
-  ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
+  AppLocker: ad734b8027d26ae5cbb4a70eed2bed30159c3b71
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  HDWalletKit: 36f3fd97c669658770e70a7ea8ab4052f38cc572
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   OpenSans: 33078846463eae780aa5f82986b51cce085f970d
-  OpenSSL-Universal: 85ef63bf81d0741b03c8719cd29685c37c59518d
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+  Valet: 11ab0e318b7284888a81392e36136563b4af5deb
 
-PODFILE CHECKSUM: ea5e78e94c3abc89924174e447d4d144028c114a
+PODFILE CHECKSUM: c8c602bf9f2f6aee65f22b69108c434590defc5d
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.10.0
